@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index(){
        $pageContents = PageContent::count();
     $services = Service::count();
-    $testimonials = Testimonial::count();
+    // $testimonials = Testimonial::count();
     $contacts = Contact::count();
     $unreadContacts = Contact::where('is_read', false)->count();
 
