@@ -28,18 +28,7 @@
                 </a>
             </div>
 
-            {{-- Testimonials --}}
-            <div class="col-lg-3 col-md-6 mb-4">
-                <a href="{{ route('admin.testimonials.index') }}">
-
-                    <div class="card">
-                        <div class="card-body">
-                            <span class="fw-medium d-block mb-1">Testimonials</span>
-                            <h3>{{ $testimonials }}</h3>
-                        </div>
-                    </div>
-                </a>
-            </div>
+           
 
             {{-- Contacts --}}
             <div class="col-lg-3 col-md-6 mb-4">

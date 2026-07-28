@@ -23,7 +23,6 @@ class HomeController extends Controller
     return view('dashboard.index', compact(
         'pageContents',
         'services',
-        'testimonials',
         'contacts',
         'unreadContacts',
         'recentContacts'

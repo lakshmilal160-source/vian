@@ -18,6 +18,9 @@ Route::get('/services', [WebsiteController::class, 'service'])->name('services')
 Route::get('/portfolio', [WebsiteController::class, 'portfolio'])->name('portfolio');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('/contact/store', [WebsiteController::class, 'storeContact'])->name('contact.store');
+// Route::get('/', function () {
+    // return view('frontend.layouts.app');
+// });
 
 //Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {

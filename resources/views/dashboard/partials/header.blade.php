@@ -56,7 +56,7 @@
                 <div class="app-brand demo">
                     <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                           <img src="{{asset('storage/'.$globalSetting->favicon)}}" width="50">
+                           <img src="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}" width="50">
                         </span>
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">{{ config('custom.app_name') }}
                         </span>
@@ -125,12 +125,12 @@
                         </a>
                     </li>
                     {{-- Testimonials --}}
-                    <li class="menu-item {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
+                    <!-- <li class="menu-item {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.testimonials.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-user-circle"></i>
                             <div>Testimonials</div>
                         </a>
-                    </li>
+                    </li> -->
 
                     {{-- Contacts --}}
                     <li class="menu-item {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">

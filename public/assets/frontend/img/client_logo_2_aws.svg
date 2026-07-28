@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" width="140" height="40">
+  <!-- AWS Text -->
+  <text x="12" y="24" font-family="'Amazon Ember', Roboto, 'Helvetica Neue', sans-serif" font-size="20" font-weight="800" fill="#232f3e" letter-spacing="-0.5">aws</text>
+  <!-- Amazon smile arrow -->
+  <path d="M14 29.5 C 24 35, 40 35, 52 29.5" fill="none" stroke="#ff9900" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M49 26.5 L 54 29 L 49 33" fill="none" stroke="#ff9900" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Partner badge text -->
+  <text x="64" y="23" font-family="Outfit, Roboto, sans-serif" font-size="12" font-weight="600" fill="#64748b" letter-spacing="0.5">CLOUD</text>
+</svg>
