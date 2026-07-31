@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PageContentController;
 use App\Http\Controllers\Backend\PortfolioController;
@@ -48,6 +49,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('clients', ClientController::class);
         Route::post('clients/{client}/toggle-status', [ClientController::class, 'toggleStatus'])->name('clients.toggleStatus');
+
+        Route::resource('faqs', FaqController::class);
 
         Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
         Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');

@@ -24,6 +24,7 @@
 
                 <!-- Center Title Group (`Custom Software Solutions at an Affordable Cost`) -->
                 <!-- As hands move inside when scrolling down, this content smoothly hides/blurs out (`to hide contant`) -->
+                @forelse ($faqs as $faq)
                 <div class="hero-title-group" id="titleGroup">
                     <h1 class="main-heading-new">
                         <span class="line-top">Custom Software</span>
@@ -210,40 +211,40 @@
                     <!-- Card 1: Far Left (-14deg tilt) -->
                     <div class="fanned-card card-tilt-left-far">
                         <div class="fanned-card-img">
-                            <img src="assets/frontend/img/service_project_1.png" alt="Custom Software Development">
+                            <img src="{{ asset('storage/' . $home->image) }}" alt="Custom Software Development">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">Custom Software Development</span>
+                            <span class="pill-label">{{ $home->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 2: Inner Left (-5deg tilt) -->
                     <div class="fanned-card card-tilt-left-inner">
                         <div class="fanned-card-img">
-                            <img src="assets/frontend/img/service_project_2.png" alt="Knowledge Process Outsourcing (KPO)">
+                            <img src="{{ asset('storage/' . $home->image) }}" alt="Knowledge Process Outsourcing (KPO)">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">Knowledge Process Outsourcing (KPO)</span>
+                            <span class="pill-label">{{ $home->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 3: Inner Right (+5deg tilt) -->
                     <div class="fanned-card card-tilt-right-inner">
                         <div class="fanned-card-img">
-                            <img src="assets/frontend/img/service_project_3.png" alt="Workflow Optimization">
+                            <img src="{{ asset('storage/' . $home->image) }}" alt="Workflow Optimization">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">Workflow Optimization</span>
+                            <span class="pill-label">{{ $home->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 4: Far Right (+14deg tilt) -->
                     <div class="fanned-card card-tilt-right-far">
                         <div class="fanned-card-img">
-                            <img src="assets/frontend/img/service_project_4.png" alt="UI / UX Design & Cloud">
+                            <img src="{{ asset('storage/' . $home->image) }}" alt="UI / UX Design & Cloud">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">UI / UX Design & Cloud</span>
+                            <span class="pill-label">{{ $home->title }}</span>
                         </div>
                     </div>
 
@@ -495,10 +496,10 @@ make wishes come true!</span>
                     <div class="faq-item">
                         <div class="faq-header">
                             <span class="faq-toggle-icon">+</span>
-                            <h3 class="faq-question-text">Chamber reached do he nothing be?</h3>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
                         </div>
                         <div class="faq-body">
-                            <p class="faq-answer">Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.</p>
+                            <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
 
@@ -506,10 +507,10 @@ make wishes come true!</span>
                     <div class="faq-item active">
                         <div class="faq-header">
                             <span class="faq-toggle-icon">—</span>
-                            <h3 class="faq-question-text">Stuff sight equal of my woody?</h3>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
                         </div>
                         <div class="faq-body">
-                            <p class="faq-answer">Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.</p>
+                            <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
 
@@ -517,10 +518,10 @@ make wishes come true!</span>
                     <div class="faq-item">
                         <div class="faq-header">
                             <span class="faq-toggle-icon">+</span>
-                            <h3 class="faq-question-text">At by pleasure of children be?</h3>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
                         </div>
                         <div class="faq-body">
-                            <p class="faq-answer">Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.</p>
+                            <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
 
@@ -528,10 +529,10 @@ make wishes come true!</span>
                     <div class="faq-item">
                         <div class="faq-header">
                             <span class="faq-toggle-icon">+</span>
-                            <h3 class="faq-question-text">Amounted repeated as believed in confined?</h3>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
                         </div>
                         <div class="faq-body">
-                            <p class="faq-answer">Our asked sex point her she seems. New plenty she horses parish design you. Stuff sight equal of my woody. Him children bringing goodness suitable she entirely put far daughter.</p>
+                            <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
                 </div>

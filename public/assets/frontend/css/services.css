@@ -513,7 +513,7 @@
 
     .service-image-side {
         width: 100%;
-        max-width: 520px;
+        max-width: 100% !important;
     }
 
     .overlap-down,
@@ -559,7 +559,7 @@
    PERFECT COLOR COMBINATION OVERRIDES
    ========================================================================== */
 .services-showcase-section {
-    background: var(--bg-section-hero, radial-gradient(circle at 50% 40%, #16003b 0%, #0a0022 100%));
+    background: #0a0022;
 }
 .service-block-light,
 .service-block-dark {
@@ -591,3 +591,140 @@
 }
 [data-theme="dark"] .service-block-light { background: var(--bg-section-ecosystem) !important; }
 [data-theme="dark"] .service-block-dark { background: var(--bg-section-cloud) !important; }
+
+/* Global Responsive Adjustments for Tab & Mobile (Equal 60px padding) */
+@media screen and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Tablet view (769px - 1024px) padding update */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    main > section {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* Tablet view spacing reductions for services showcase blocks */
+@media screen and (max-width: 1024px) {
+    .service-showcase-block {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    .service-block-container,
+    .service-block-reverse .service-block-container {
+        gap: 2rem !important; /* Reduced from 3.5rem/4.8rem */
+    }
+}
+
+/* Aggressive tablet view spacing reductions (Fixed overlap) */
+@media screen and (max-width: 1024px) {
+    .service-showcase-block {
+        padding-top: 0rem !important;
+        padding-bottom: 5rem !important;
+    }
+    .service-block-container,
+    .service-block-reverse .service-block-container {
+        gap: 1.5rem !important;
+    }
+    .service-text-side {
+        margin-bottom: 0 !important;
+    }
+    .service-image-side {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}
+
+/* Fix gap below banner on mobile and tablet */
+@media screen and (max-width: 1024px) {
+    #servicesShowcaseBody {
+        padding-top: 0 !important;
+    }
+    #esperBannerHero {
+        padding-bottom: 70 !important;
+    }
+}
+
+/* Reduce top and bottom padding for the services banner section */
+.services-page-body #esperBannerHero {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+/* ==========================================================================
+   iPhone Pro Max (430x932) Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 430px) {
+    .services-grid,
+    .service-cards-container,
+    .pricing-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .service-card,
+    .pricing-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+    .service-details,
+    .service-content {
+        padding: 15px !important;
+    }
+}
+

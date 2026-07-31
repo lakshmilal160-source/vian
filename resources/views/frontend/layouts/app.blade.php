@@ -30,7 +30,7 @@
 
 
     <!-- Main Scroll Container for Hero Stage -->
-    <main>
+    <main class="contact-main-wrapper">
         @yield('contents')
     </main>
 

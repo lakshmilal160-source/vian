@@ -1,14 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\PageContent;
+use App\Models\Faq;
+use App\Models\Service;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    public function home()
+public function faq()
 {
-    return view('frontend.index');
+    $faqs = Faq::all();
+
+    return view('frontend.faq', compact('faqs'));
 }
 
 public function about()
@@ -18,12 +23,15 @@ public function about()
 
 public function service()
 {
-    return view('frontend.service');
-}
+    $services = Service::all();
 
+    return view('frontend.service', compact('services'));
+}
 public function portfolio()
 {
-    return view('frontend.portfolio');
+    $portfolios = Portfolio::all();
+
+    return view('frontend.portfolio', compact('portfolios'));
 }
 
 public function contact()

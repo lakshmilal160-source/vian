@@ -2,6 +2,7 @@
 @push('style')
     {{-- <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="portfolio.css"> --}}
+    <link rel="stylesheet" href="{{asset('assets/frontend/css/contact.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/portfolio.css') }}">
 @endpush
 @section('contents')
@@ -31,16 +32,17 @@
             <div class="portfolio-split-wrapper">
 
                 <!-- Row 01: Order To Cash (O2C) — [ Left: Image Side | Right: Text Side ] -->
+        @forelse ($portfolios as $portfolio)
                 <div class="portfolio-split-row">
                     <div class="split-img-side">
                         <div class="split-img-frame">
-                            <img src="assets/001.jpg" alt="Order To Cash O2C Financial & Revenue Dashboard">
+                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Order To Cash O2C Financial & Revenue Dashboard">
                         </div>
                     </div>
                     <div class="split-text-side">
                         <div class="split-content-box">
-                            <h2 class="split-title">Order To Cash (O2C)</h2>
-                            <p class="split-desc">We have delivered complete Order-to-Cash solutions that seamlessly connect sales, operations, finance, and collections. Our O2C systems cover the full cycle—from quotation and order confirmation to invoicing, receivables, and reporting—giving businesses real-time visibility into revenue, cash flow, and customer performance. The focus is always on speed, accuracy, and control, helping clients reduce billing delays, minimize disputes, and improve working capital.</p>
+                            <h2 class="split-title">{{ $portfolio->title }}</h2>
+                            <p class="split-desc">{{ $portfolio->description }}</p>
                             
                         </div>
                     </div>
@@ -50,13 +52,13 @@
                 <div class="portfolio-split-row">
                     <div class="split-img-side">
                         <div class="split-img-frame">
-                            <img src="assets/002.jpeg" alt="Procure To Pay P2P Enterprise Procurement System">
+                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Procure To Pay P2P Enterprise Procurement System">
                         </div>
                     </div>
                     <div class="split-text-side">
                         <div class="split-content-box">
-                            <h2 class="split-title">Procure To Pay (P2P)</h2>
-                            <p class="split-desc">Our Procure-to-Pay implementations streamline how organizations source, approve, purchase, and pay. We build workflows that integrate requisitions, approvals, vendor management, purchase orders, goods receipt, invoice processing, and bank batch approvals into a single transparent flow. The result is better cost control, stronger compliance, faster payments, and clear visibility of spending across departments.</p>
+                            <h2 class="split-title">{{ $portfolio->title }}</h2>
+                            <p class="split-desc">{{ $portfolio->description }}</p>
                             
                         </div>
                     </div>
@@ -66,13 +68,13 @@
                 <div class="portfolio-split-row">
                     <div class="split-img-side">
                         <div class="split-img-frame">
-                            <img src="assets/003.jpg" alt="Agency ERP Maritime Operations Platform">
+                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Agency ERP Maritime Operations Platform">
                         </div>
                     </div>
                     <div class="split-text-side">
                         <div class="split-content-box">
-                            <h2 class="split-title">Agency ERP</h2>
-                            <p class="split-desc">We have developed ERP platforms specifically for agency-driven businesses where operations move fast and accuracy is critical. Our Agency ERP covers port calls, husbandry services, vendor coordination, client billing, documentation, and financial integration—all in one system. Designed for real operational environments, it reduces manual work, avoids duplication, and gives management a clear view of performance across locations and teams.</p>
+                            <h2 class="split-title">{{ $portfolio->title }}</h2>
+                            <p class="split-desc">{{ $portfolio->description }}</p>
                            
                         </div>
                     </div>
@@ -82,13 +84,13 @@
                 <div class="portfolio-split-row">
                     <div class="split-img-side">
                         <div class="split-img-frame">
-                            <img src="assets/004.jpeg" alt="Digital Agency Marketplace B2B Platform">
+                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Digital Agency Marketplace B2B Platform">
                         </div>
                     </div>
                     <div class="split-text-side">
                         <div class="split-content-box">
-                            <h2 class="split-title">Agency Marketplace</h2>
-                            <p class="split-desc">We have built digital marketplaces that connect principals, agents, and service providers on a single platform. These marketplaces enable discovery of services, transparent pricing, standardized workflows, and seamless communication between parties. The goal is to move agencies from fragmented, email-driven operations to a connected digital ecosystem that improves speed, trust, and efficiency.</p>
+                            <h2 class="split-title">{{ $portfolio->title }}</h2>
+                            <p class="split-desc">{{ $portfolio->description }}</p>
                             
                         </div>
                     </div>
@@ -129,4 +131,6 @@
                 </nav>
             </div>
         </section>
+        @empty
+        @endforelse
 @endsection
