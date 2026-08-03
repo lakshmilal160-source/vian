@@ -63,7 +63,7 @@
                         <!-- Left: Image with Offset Outline Frame overlapping up -->
                         <div class="service-image-side animate-on-scroll anim-fade-left delay-200 overlap-up">
                             <div class="service-img-wrap">
-                                <img src="assets/frontend/img/service_kpo.png"
+                                <img src="{{ asset('storage/' . $service->image) }}"
                                     alt="Knowledge Process Outsourcing Global Operations & GCCs">
                             </div>
                             <div class="service-img-outline outline-bottom-left"></div>
@@ -72,18 +72,12 @@
                         <!-- Right: Number + Content -->
                         <div class="service-text-side animate-on-scroll anim-fade-right">
                             <div class="service-content-wrapper">
-                                <h2 class="service-heading">Knowledge Process Outsourcing (KPO)</h2>
+                                <h2 class="service-heading">{{ $service->title }}</h2>
                                 <hr class="service-heading-divider">
-                                <p class="service-subheading">✦ Dedicated GCCs & High-Value Operations</p>
+                                <p class="service-subheading">✦ {{ $service->short_description }}</p>
                                 <div class="service-paragraph-content">
-                                    <p class="service-desc-paragraph">We provide skilled teams, structured processes, and
-                                        smart
-                                        tools to handle complex, high-value work with accuracy and consistency.</p>
-                                    <p class="service-desc-paragraph">We support companies in setting up and running Global
-                                        Capability Centres, providing technology, process design, and operational support to
-                                        build
-                                        strong and hybrid teams.</p>
-                                </div>
+                                    <p class="service-desc-paragraph">{!! $service->description !!}</p>
+                                
                             </div>
                         </div>
                     </div>

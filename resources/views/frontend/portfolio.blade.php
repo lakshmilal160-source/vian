@@ -48,55 +48,8 @@
                     </div>
                 </div>
 
-                <!-- Row 02: Procure To Pay (P2P) — [ Left: Image Side | Right: Text Side ] -->
-                <div class="portfolio-split-row">
-                    <div class="split-img-side">
-                        <div class="split-img-frame">
-                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Procure To Pay P2P Enterprise Procurement System">
-                        </div>
-                    </div>
-                    <div class="split-text-side">
-                        <div class="split-content-box">
-                            <h2 class="split-title">{{ $portfolio->title }}</h2>
-                            <p class="split-desc">{{ $portfolio->description }}</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 03: Agency ERP — [ Left: Image Side | Right: Text Side ] -->
-                <div class="portfolio-split-row">
-                    <div class="split-img-side">
-                        <div class="split-img-frame">
-                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Agency ERP Maritime Operations Platform">
-                        </div>
-                    </div>
-                    <div class="split-text-side">
-                        <div class="split-content-box">
-                            <h2 class="split-title">{{ $portfolio->title }}</h2>
-                            <p class="split-desc">{{ $portfolio->description }}</p>
-                           
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Row 04: Agency Marketplace — [ Left: Image Side | Right: Text Side ] -->
-                <div class="portfolio-split-row">
-                    <div class="split-img-side">
-                        <div class="split-img-frame">
-                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="Digital Agency Marketplace B2B Platform">
-                        </div>
-                    </div>
-                    <div class="split-text-side">
-                        <div class="split-content-box">
-                            <h2 class="split-title">{{ $portfolio->title }}</h2>
-                            <p class="split-desc">{{ $portfolio->description }}</p>
-                            
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+                @empty
+        @endforelse
 
             <!-- ==========================================================================
                  PORTFOLIO PAGINATION SECTION
@@ -129,8 +82,7 @@
                         </svg>
                     </button>
                 </nav>
-            </div>
+            </div>          
         </section>
-        @empty
-        @endforelse
+        
 @endsection

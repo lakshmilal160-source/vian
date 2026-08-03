@@ -113,6 +113,18 @@
                         </a>
                     </li>
 
+                    <li class="menu-item {{ request()->routeIs('admin.faqs.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.faqs.index') }}" class="menu-link">
+
+                            <i class="menu-icon tf-icons bx bx-briefcase"></i>
+
+                            <div>
+                                Faqs
+                            </div>
+
+                        </a>
+                    </li>
+
                     <li class="menu-item {{ request()->routeIs('admin.clients.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.clients.index') }}" class="menu-link">
 
