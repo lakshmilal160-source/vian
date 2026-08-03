@@ -3,7 +3,7 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="d-flex justify-content-between py-3 mb-4">
             <h4 class="fw-bo(ld "><span class="text-muted fw-light">Page Contents /</span> List </h4>
-            <a href="{{ route('admin.page-content.create') }}" class="btn btn-primary">
+            <a href="{{ route('admin.pagecontent.create') }}" class="btn btn-primary">
                 <span class="tf-icons bx bx-plus-circle"></span>&nbsp; Add New
             </a>
         </div>
@@ -62,13 +62,13 @@
                                         <div class="dropdown-menu">
                                             {{-- Edit --}}
                                             <a class="dropdown-item"
-                                                href="{{ route('admin.page-content.edit', $content->id) }}">
+                                                href="{{ route('admin.pagecontent.edit', $content->id) }}">
                                                 <i class="bx bx-edit-alt me-1"></i>
                                                 Edit
                                             </a>
 
                                             {{-- Delete --}}
-                                            <form action="{{ route('admin.page-content.destroy', $content->id) }}"
+                                            <form action="{{ route('admin.pagecontent.destroy', $content->id) }}"
                                                 method="POST"
                                                 onsubmit="return confirm('Are you sure you want to delete this item?')">
 

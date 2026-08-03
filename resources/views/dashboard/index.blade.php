@@ -5,7 +5,7 @@
 
             {{-- Page Contents --}}
             <div class="col-lg-3 col-md-6 mb-4">
-                <a href="{{ route('admin.page-content.index') }}">
+                <a href="{{ route('admin.pagecontent.index') }}">
                     <div class="card">
                         <div class="card-body">
                             <span class="fw-medium d-block mb-1">Page Contents</span>

@@ -163,7 +163,7 @@ body {
 }
 
 .vian-nav-item:hover {
-    color: var(--accent-purple-light);
+    color: #35177b;
     transform: translateY(-1px);
 }
 
@@ -571,7 +571,7 @@ h1, h2,
 
 .hand-wrapper {
     position: absolute;
-    top: 50%;
+    top: 60%;
     width: 48vw;
     max-width: 780px;
     height: 420px;
@@ -2544,7 +2544,7 @@ h1, h2,
     font-family: 'Outfit', sans-serif;
     font-size: 0.83rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #000;
     line-height: 1.3;
     text-align: center;
     white-space: normal;
@@ -2884,7 +2884,7 @@ h1, h2,
     position: relative;
     width: 100%;
     padding: 5rem 1.5rem 12rem 1.5rem;
-    background-image: url('assets/dreamy_clouds_bg.png');
+    background-image:url('../img/dreamy_clouds_bg.png') ;
     background-size: 118% 118%;
     background-position: 0% 15%;
     background-repeat: no-repeat;
@@ -2914,7 +2914,7 @@ h1, h2,
 }
 
 [data-theme="dark"] .dreamy-cloud-section {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('assets/dreamy_clouds_bg.png');
+    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('../img/dreamy_clouds_bg.png');
     background-size: 118% 118%;
     background-position: center top;
     background-color: #1e1b4b;
@@ -3194,9 +3194,14 @@ h2.cloud-main-heading {
         padding: 0 1rem 5rem 1rem;
     }
     .works-showcase-container {
-        padding: 2rem 1.2rem;
+        padding:0px;
         border-radius: 24px;
     }
+    .statement-header-area {
+    position: relative;
+     padding: 0px !important; 
+    overflow: hidden;
+}
 }
 
 .works-carousel-wrapper {
@@ -3778,13 +3783,35 @@ h2.cloud-main-heading {
 .bottom-cta-heading-section {
     position: relative;
     padding: 0 2rem 6rem 2rem;
-    background: #f8fafc;
+    background-image: url('../img/dreamy_clouds_bg.png');
+    background-size: 118% 118%;
+    background-position: 0% 15%;
+    background-repeat: no-repeat;
+    background-color: #ebd3ff;
+    overflow: hidden;
+    animation: cloudBgSmoothPan 22s ease-in-out infinite alternate;
     z-index: 10;
     border-top: 1px solid rgba(203, 213, 225, 0.4);
 }
 
+.bottom-cta-heading-section::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.5) 0%, rgba(232, 207, 255, 0.35) 40%, transparent 70%);
+    pointer-events: none;
+    z-index: 2;
+    animation: cloudAmbientLightPulse 15s ease-in-out infinite alternate;
+}
+
 [data-theme="dark"] .bottom-cta-heading-section {
-    background: var(--bg-main);
+    background-image: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.85)), url('../img/dreamy_clouds_bg.png');
+    background-size: 118% 118%;
+    background-position: center top;
+    background-color: #1e1b4b;
     border-top-color: rgba(51, 65, 85, 0.4);
 }
 
@@ -4076,9 +4103,10 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
    9.5 Client & Partners Carousel (`add client carouse in bottom`)
    ========================================================================== */
 .client-showcase-section {
-    padding: 0px 0px 60px;
-    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 50px 0px 0px;
+    background: #0a0022;
     position: relative;
+    
     overflow: hidden;
    
 }
@@ -4148,7 +4176,9 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     width: 100%;
     overflow: hidden;
     padding: 1.2rem 0;
+    padding-bottom: 70px;
     position: relative;
+   
 }
 
 .client-marquee-wrapper::before,
@@ -4164,12 +4194,12 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
 
 .client-marquee-wrapper::before {
     left: 0;
-    background: linear-gradient(to right, #f8fafc, transparent);
+   
 }
 
 .client-marquee-wrapper::after {
     right: 0;
-    background: linear-gradient(to left, #f8fafc, transparent);
+   
 }
 
 [data-theme="dark"] .client-marquee-wrapper::before {
@@ -4405,7 +4435,24 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     .client-main-title {
         font-size: 2.2rem;
     }
-    
+    .hero-sticky-viewport {
+    position: sticky;
+    top: 3rem;
+    width: 100vw;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6rem 2.5rem 3.5rem 2.5rem;
+    overflow: hidden;
+}
+.fanned-ecosystem-section {
+    padding: 3rem 2.5rem 6rem 2.5rem;
+    position: relative;
+    z-index: 20;
+    background: #0a002200;
+    overflow: hidden;
+}
 }
 
 @media (max-width: 768px) {
@@ -4426,6 +4473,12 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     margin-bottom: 0px;
     z-index: 10;
 }
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-bottom: 30px;
+}
 }
 
 
@@ -4433,11 +4486,12 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
    Upgraded Enterprise Footer (`and footer`)
    ========================================================================== */
 .footer {
-    position: relative;
-    background: #0a0022;
+       position: relative;
+    background:#0a0022;
     color: #cbd5e1;
-    padding: 80px 0px 0px;
+    padding: 50px 0px 0px;
     z-index: 20;
+    border-top: 1px solid #303030;
     overflow: hidden;
     
 }
@@ -4565,7 +4619,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     left: 0;
     width: 28px;
     height: 2px;
-    background: #2563eb;
+    background: #2563eb00;
     border-radius: 2px;
 }
 
@@ -4711,10 +4765,42 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     .vian-nav-item { font-size: 0.88rem; }
     .custom-solutions-pill-btn { padding: 4px 16px 4px 5px; font-size: 0.88rem; }
     .hand-wrapper { width: 52vw; }
+    .footer {
+    position: relative;
+    background: #0a0022;
+    color: #cbd5e1;
+    padding: 50px 20px 0px;
+    z-index: 20;
+    overflow: hidden;
+}
+.faq-section {
+    position: relative;
+    padding: 2rem 2rem 90px 2rem;
+    background: var(--bg-main);
+    overflow: hidden;
+    z-index: 10;
+}
 
     /* Fanned Ecosystem Tablet Scaling */
-    .fanned-cards-deck { gap: 0.5rem; }
-    .fanned-card { width: 215px; height: 290px; }
+    .fanned-cards-deck { 
+        flex-wrap: wrap; 
+        gap: 1.5rem; 
+        perspective: none; 
+    }
+    .fanned-card { 
+        width: calc(50% - 0.75rem); 
+        max-width: 320px; 
+        height: 320px; 
+    }
+    .fanned-cards-deck:not(.cards-flow-active) .fanned-card {
+        transform: translateY(30px) !important;
+    }
+    .fanned-cards-deck.cards-flow-active .fanned-card {
+        transform: none !important;
+    }
+    .fanned-cards-deck.cards-flow-active .fanned-card:hover {
+        transform: translateY(-8px) !important;
+    }
     .ecosystem-main-statement { font-size: 1.35rem; }
     .ecosystem-title { font-size: 2.5rem; }
 
@@ -4873,7 +4959,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     /* Responsive Hero Stage & Body */
     .hero-stage-container { padding-top: 5rem; padding-bottom: 4rem; margin-top: 3.5rem; margin-bottom: 3.5rem; }
     .hero-sticky-viewport { top: 4.5rem; height: calc(100vh - 5.5rem); padding: 4rem 1rem 2.5rem 1rem; }
-    .hand-wrapper { width: 62vw; height: 260px; }
+    .hand-wrapper { width: 62vw; height: 260px; margin-top: 60px; }
     .left-hand { transform: translateY(-50%) translateX(-30vw); }
     .right-hand { transform: translateY(-50%) translateX(30vw); }
     .arm-telemetry-badge { display: none; }
@@ -4907,7 +4993,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     .ecosystem-title { font-size: 2.1rem; }
 
     /* Creative Infographic Mobile */
-    .creative-infographic-section { padding: 4rem 1.2rem 5rem 1.2rem; }
+    .creative-infographic-section { padding: 0rem 1.2rem 5rem 1.2rem; }
     .infographic-container { gap: 3rem; }
     .infographic-main-title { font-size: 2.5rem; }
     .infographic-orbit-system { width: 290px; height: 290px; }
@@ -4931,7 +5017,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     .vian-logo-img { height: 35px; }
     .vian-pill-nav { gap: 0.7rem; padding: 0.25rem 0.75rem; }
     .vian-nav-item { font-size: 0.76rem; }
-    .custom-solutions-pill-btn { padding: 3px 12px 3px 3px; font-size: 0.76rem; gap: 0.45rem; }
+    .custom-solutions-pill-btn { padding: 3px 12px 3px 3px; font-size:11px; gap: 0.45rem; }
     .arrow-circle-btn { width: 26px; height: 26px; }
     .main-heading-new .line-top, .main-heading-new .line-bottom { font-size: 2.1rem; }
     .main-heading-new .line-middle { font-size: 2.35rem; }
@@ -5027,6 +5113,9 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     .brand-col {
         grid-column: span 2;
     }
+    .yu {
+    padding-left: 0px !important;
+}
 }
 
 @media (max-width: 768px) {
@@ -5064,8 +5153,8 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
         margin-bottom: 2rem;
     }
     button.custom-solutions-pill-btn.contact-submit-pill-btn {
-        width: 100%;
-        justify-content: center;
+        width: 55%;
+        justify-content: left;
         padding: 8px 24px 8px 8px;
     }
 
@@ -5079,7 +5168,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
     }
     .works-showcase-section,
     .client-showcase-section {
-        padding: 3rem 1rem 4rem 1rem;
+        padding: 0rem 1rem 4rem 1rem;
     }
     .client-logo-card {
         min-width: 135px;
@@ -5150,6 +5239,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn:hover .arrow-circle-btn
         flex: 0 0 100%;
         min-width: 270px;
         padding: 1.5rem 1.2rem;
+                margin-top: 20px;
     }
     .client-logo-card {
         min-width: 120px;
@@ -5285,7 +5375,7 @@ h6.fade-in-up-scroll.is-visible,
         line-height: 1.28 !important;
     }
     h3, .split-title, .service-heading {
-        font-size: clamp(1.28rem, 4.5vw, 1.55rem) !important;
+        font-size: 20px !important;
         line-height: 1.32 !important;
     }
 }
@@ -5300,6 +5390,11 @@ h6.fade-in-up-scroll.is-visible,
     h3, .split-title, .service-heading {
         font-size: clamp(1.18rem, 5.5vw, 1.42rem) !important;
     }
+      .statement-header-area {
+    position: relative;
+     padding: 0px !important; 
+    overflow: hidden;
+}
 }
 
 
@@ -5316,26 +5411,26 @@ h6.fade-in-up-scroll.is-visible,
     /* Kept original background image and color */
 }
 .our-works-showcase-section {
-    background: var(--bg-section-showcase);
+          background: #0f111a00;
 }
 .creative-infographic-section {
-    background: var(--bg-section-infographic);
+    background: #00000000;
 }
 .faq-section {
-    background: var(--bg-section-faq);
+    background: #15051f00;
 }
 .bottom-cta-heading-section {
-    background: var(--bg-section-cta);
+    background: #f8fafc;
 }
 .client-showcase-section {
-    background: var(--bg-section-ecosystem);
+    background:  #f8fafc;
 }
 
 [data-theme="dark"] .hero-stage-container {
     background: var(--bg-section-hero);
 }
 [data-theme="dark"] .fanned-ecosystem-section {
-    background: var(--bg-section-ecosystem);
+    background: #05051700;
 }
 [data-theme="dark"] .dreamy-cloud-section {
     /* Kept original background image and color */
@@ -5362,4 +5457,166 @@ h6.fade-in-up-scroll.is-visible,
 }
 [data-theme="dark"] .faq-item.active .faq-question-text {
     color: #ffffff !important;
+}
+
+/* Global Responsive Adjustments for Tab & Mobile (Equal 60px padding) */
+@media screen and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 20px !important;
+        box-sizing: border-box !important;
+    }
+    .cloud-content-container {
+    max-width: 820px !important;
+    padding: 40px 0px 60px 0px;
+}
+.ecosystem-action-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* margin-top: 1.2rem; */
+    margin-bottom: 50px;
+}
+}
+
+/* Fix for animation visibility and sticky viewport on mobile */
+@media screen and (max-width: 1024px) {
+    .hero-stage-container, .hero-sticky-viewport {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    .synapse-spark-zone {
+        transform: translate(-50%, -50%) scale(0.75) !important;
+        z-index: 99 !important;
+    }
+    .hands-stage {
+        z-index: 98 !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-stage-container, .hero-sticky-viewport {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .synapse-spark-zone {
+        transform: translate(-50%, -50%) scale(0.55) !important;
+        z-index: 99 !important;
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    .hands-stage {
+        z-index: 98 !important;
+    }
+}
+
+/* Tablet view (769px - 1024px) padding update */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    main > section {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* ==========================================================================
+   iPhone Pro Max (430x932) Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 430px) {
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .it-tech-ecosystem,
+    .tech-glow-core,
+    .outer-orbit,
+    .inner-orbit,
+    .cloud-top-left,
+    .cloud-top-right {
+        width: 100% !important;
+        max-width: 380px !important;
+        height: auto !important;
+        aspect-ratio: 1 / 1;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        right: auto !important;
+    }
+    
+    .section-container,
+    .hero-content,
+    .container {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        box-sizing: border-box;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .infographic-desc, .row-item-desc {
+        max-width: 100% !important;
+    }
+    
+    img, video, iframe, figure {
+        max-width: 100% !important;
+        
+    }
+    
+    .split-layout, .grid, .grid-container, .services-grid, .portfolio-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
 }

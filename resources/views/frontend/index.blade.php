@@ -24,7 +24,7 @@
 
                 <!-- Center Title Group (`Custom Software Solutions at an Affordable Cost`) -->
                 <!-- As hands move inside when scrolling down, this content smoothly hides/blurs out (`to hide contant`) -->
-                @forelse ($faqs as $faq)
+                {{-- @forelse ($faqs as $faq) --}}
                 <div class="hero-title-group" id="titleGroup">
                     <h1 class="main-heading-new">
                         <span class="line-top">Custom Software</span>
@@ -206,50 +206,49 @@
                 </div>
 
                 <!-- Part 4: Fanned-Out 4 Glassmorphic Cards Deck (`Habit tracker`, `Risk prediction`, etc. style) -->
+                @forelse ($services as $service)
                 <div class="fanned-cards-deck">
-                    
                     <!-- Card 1: Far Left (-14deg tilt) -->
                     <div class="fanned-card card-tilt-left-far">
                         <div class="fanned-card-img">
-                            <img src="{{ asset('storage/' . $home->image) }}" alt="Custom Software Development">
+                            <img src="{{ asset('storage/' . $service->image) }}" alt="Custom Software Development">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">{{ $home->title }}</span>
+                            <span class="pill-label">{{ $service->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 2: Inner Left (-5deg tilt) -->
                     <div class="fanned-card card-tilt-left-inner">
                         <div class="fanned-card-img">
-                            <img src="{{ asset('storage/' . $home->image) }}" alt="Knowledge Process Outsourcing (KPO)">
+                            <img src="{{ asset('storage/'. $service->image) }}" alt="Knowledge Process Outsourcing (KPO)">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">{{ $home->title }}</span>
+                            <span class="pill-label">{{ $service->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 3: Inner Right (+5deg tilt) -->
                     <div class="fanned-card card-tilt-right-inner">
                         <div class="fanned-card-img">
-                            <img src="{{ asset('storage/' . $home->image) }}" alt="Workflow Optimization">
+                            <img src="{{ asset('storage/' . $service->image) }}" alt="Workflow Optimization">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">{{ $home->title }}</span>
+                            <span class="pill-label">{{ $service->title }}</span>
                         </div>
                     </div>
 
                     <!-- Card 4: Far Right (+14deg tilt) -->
                     <div class="fanned-card card-tilt-right-far">
                         <div class="fanned-card-img">
-                            <img src="{{ asset('storage/' . $home->image) }}" alt="UI / UX Design & Cloud">
+                            <img src="{{ asset('storage/' . $service->image) }}" alt="UI / UX Design & Cloud">
                         </div>
                         <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">{{ $home->title }}</span>
+                            <span class="pill-label">{{ $service->title }}</span>
                         </div>
                     </div>
-
                 </div>
-
+                
                 <!-- Part 5: Bottom Action Button (Exact Twin of Header Button) -->
                 <div class="ecosystem-action-row">
                     <a href="#solutions-section" class="custom-solutions-pill-btn bottom-hero-btn">
@@ -264,6 +263,8 @@
                 </div>
 
             </div>
+            @empty
+            @endforelse
         </section>
          <!-- SECTION 7: Dreamy Lavender Cloud AI Agent Banner Section (Exact Match of Screenshot) -->
         <section class="dreamy-cloud-section" id="dreamy-cloud-section">
@@ -308,10 +309,11 @@
                     <!-- Carousel Track (3 Cards Side-by-Side on Desktop) -->
                     <div class="works-carousel-track" id="worksCarouselTrack">
                         <!-- Slide 1 -->
+                        @forelse ($portfolios as $portfolio)
                         <div class="works-slide-card">
-                            <div class="slide-badge">✦ ORDER TO CASH</div>
-                            <h4 class="slide-title">Order To Cash (O2C)</h4>
-                            <p class="slide-desc">We have delivered complete Order-to-Cash solutions that seamlessly connect sales, operations, finance, and collections.</p>
+                            <div class="slide-badge">{{ $portfolio->title }}</div>
+                            <h4 class="slide-title">{{ $portfolio->category }}</h4>
+                            <p class="slide-desc">{{ $portfolio->description }}</p>
                             <div class="slide-meta">
                                 <a href="#solutions-section" class="custom-solutions-pill-btn slide-card-read-more-btn">
                                     <span class="arrow-circle-btn">
@@ -327,9 +329,9 @@
 
                         <!-- Slide 2 -->
                         <div class="works-slide-card">
-                            <div class="slide-badge">✦ PROCURE TO PAY</div>
-                            <h4 class="slide-title">Procure To Pay (P2P)</h4>
-                            <p class="slide-desc">Our Procure-to-Pay implementations streamline how organizations source, approve, purchase, and pay.</p>
+                            <div class="slide-badge">{{ $portfolio->title }}</div>
+                            <h4 class="slide-title">{{ $portfolio->category }}</h4>
+                            <p class="slide-desc">{{ $portfolio->description }}</p>
                             <div class="slide-meta">
                                 <a href="#solutions-section" class="custom-solutions-pill-btn slide-card-read-more-btn">
                                     <span class="arrow-circle-btn">
@@ -343,42 +345,6 @@
                             </div>
                         </div>
 
-                        <!-- Slide 3 -->
-                        <div class="works-slide-card">
-                            <div class="slide-badge">✦ AGENCY ERP</div>
-                            <h4 class="slide-title">Agency ERP</h4>
-                            <p class="slide-desc">We have developed ERP platforms specifically for agency-driven businesses where operations move fast and accuracy is critical.</p>
-                            <div class="slide-meta">
-                                <a href="#solutions-section" class="custom-solutions-pill-btn slide-card-read-more-btn">
-                                    <span class="arrow-circle-btn">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="pill-btn-text">Read more</span>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="works-slide-card">
-                            <div class="slide-badge">✦ DIGITAL MARKETPLACE</div>
-                            <h4 class="slide-title">Agency Marketplace</h4>
-                            <p class="slide-desc">We have built digital marketplaces that connect principals, agents, and service providers on a single platform.</p>
-                            <div class="slide-meta">
-                                <a href="#solutions-section" class="custom-solutions-pill-btn slide-card-read-more-btn">
-                                    <span class="arrow-circle-btn">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="pill-btn-text">Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Indicator Dots & Navigation Arrows -->
                     <div class="carousel-stage-controls">
@@ -401,6 +367,8 @@
                     </div>
                 </div>
             </div>
+            @empty
+            @endforelse
         </section>
 
         <!-- SECTION 6: Creative Infographic Slide (Exact Match of Screenshot) -->
@@ -485,9 +453,9 @@ make wishes come true!</span>
 
             </div>
         </section>
-
         <!-- SECTION 8: FAQ Section (Exact Design) -->
         <section class="faq-section" id="faq-section">
+            @forelse ($faqs as $faq)
             <div class="faq-container">
                 <h2 class="faq-main-title">FAQ's</h2>
                 
@@ -502,54 +470,27 @@ make wishes come true!</span>
                             <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
-
-                    <!-- FAQ Item 2 (Active by default matching design) -->
-                    <div class="faq-item active">
-                        <div class="faq-header">
-                            <span class="faq-toggle-icon">—</span>
-                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
-                        </div>
-                        <div class="faq-body">
-                            <p class="faq-answer">{{ $faq->answer }}</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item">
-                        <div class="faq-header">
-                            <span class="faq-toggle-icon">+</span>
-                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
-                        </div>
-                        <div class="faq-body">
-                            <p class="faq-answer">{{ $faq->answer }}</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-item">
-                        <div class="faq-header">
-                            <span class="faq-toggle-icon">+</span>
-                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
-                        </div>
-                        <div class="faq-body">
-                            <p class="faq-answer">{{ $faq->answer }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    @empty
+            @endforelse
         </section>
 
         <!-- SECTION 9: Bottom Statement Heading Section (`add this headiig bottom`) -->
         <section class="bottom-cta-heading-section" id="bottom-statement">
             <div class="statement-header-area">
-                <!-- Faint Architectural Background Grid & Curved Arcs ONLY inside Heading block -->
-                <div class="cta-bg-guides" aria-hidden="true">
-                    <span class="guide-line v-line-1"></span>
-                    <span class="guide-line v-line-2"></span>
-                    <span class="guide-line v-line-3"></span>
-                    <span class="guide-line v-line-4"></span>
-                    <span class="guide-arc arc-right"></span>
-                    <span class="guide-arc arc-left"></span>
+                <!-- Layered Animated Cloud Atmosphere & Floating Background Mist/Sparkles -->
+                <div class="cloud-atmosphere" aria-hidden="true">
+                    <!-- Drifting Foreground Mist & Puff 1 -->
+                    <div class="drifting-cloud drift-1"></div>
+                    <!-- Drifting Foreground Mist & Puff 2 -->
+                    <div class="drifting-cloud drift-2"></div>
+                    <!-- Drifting Foreground Mist & Puff 3 -->
+                    <div class="drifting-cloud drift-3"></div>
+                    <!-- Drifting Foreground Mist & Puff 4 -->
+                    <div class="drifting-cloud drift-4"></div>
+                    <!-- Floating Ethereal Sparkles across the cloud sky -->
+                    <span class="cloud-sparkle sparkle-1">✦</span>
+                    <span class="cloud-sparkle sparkle-2">✦</span>
+                    <span class="cloud-sparkle sparkle-3">✦</span>
                 </div>
 
                 <div class="cta-heading-container">
@@ -576,8 +517,7 @@ make wishes come true!</span>
             <div class="cta-heading-container">
                 <!-- Contact Form Card Under Heading (`remove vetical lines bg from contact-form-card`) -->
                 <div class="contact-form-wrapper-cta">
-                    <!-- Dynamic Background Animation Canvas (`add bg annimation`) -->
-                    <canvas id="contactBgCanvas" class="contact-bg-canvas"></canvas>
+                    <!-- Background animation removed -->
 
                     <form class="contact-form-card" id="contactForm" onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
                         <div class="contact-form-grid">

@@ -33,11 +33,11 @@ body {
 .portfolio-body-section {
     width: 100%;
     margin: 0 auto;
-    padding: 5rem 0 5rem 0;
+    padding: 0px;
 }
 
 .portfolio-split-wrapper {
-    max-width: 1440px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
@@ -74,7 +74,7 @@ body {
 .split-text-side {
     flex: 1 1 50%;
     min-width: 320px;
-    background-color: #d1ccde73;
+    background-color: #e4e4e4;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,10 +279,11 @@ body {
     width: 100%;
     max-width: 1280px;
     margin: 5rem auto 1rem auto;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .portfolio-pagination {
@@ -440,7 +441,7 @@ body {
    PERFECT COLOR COMBINATION OVERRIDES
    ========================================================================== */
 .portfolio-body-section {
-    background: #f8fafc !important;
+    background: #0a0022 !important;
 }
 .split-title {
     background: linear-gradient(90deg, #000000 0%, #35177b 100%) !important;
@@ -488,3 +489,114 @@ body {
     background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
     color: #0f172a !important;
 }
+
+/* Global Responsive Adjustments for Tab & Mobile (Equal 60px padding) */
+@media screen and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Tablet view (769px - 1024px) padding update */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    main > section {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* ==========================================================================
+   iPhone Pro Max (430x932) Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 430px) {
+    .portfolio-grid,
+    .masonry-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .portfolio-item,
+    .portfolio-card {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+    .portfolio-item img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .filters,
+    .portfolio-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+
+/* Alternate Backgrounds */
+.portfolio-split-row:nth-child(even) {
+    background-color: var(--bg-section-cloud, #111522);
+}
+.portfolio-split-row:nth-child(even) .split-title {
+    color: var(--text-primary, #f8fafc) !important;
+}
+.portfolio-split-row:nth-child(even) .split-desc {
+    color: #556570 !important;
+}
+.portfolio-split-row:nth-child(even) .split-signature {
+    color: var(--text-primary, #f8fafc) !important;
+}
+

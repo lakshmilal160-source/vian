@@ -88,7 +88,7 @@
                     </li>
                     {{-- Page Contents --}}
                     <li class="menu-item {{ request()->routeIs('admin.page-content.*') ? 'active' : '' }}">
-                        <a href="{{ route('admin.page-content.index') }}" class="menu-link">
+                        <a href="{{ route('admin.pagecontent.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div>Page Contents</div>
                         </a>

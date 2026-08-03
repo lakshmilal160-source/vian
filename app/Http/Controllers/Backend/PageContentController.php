@@ -27,7 +27,7 @@ class PageContentController extends Controller
             ->latest()
             ->get();
 
-        return view('dashboard.page-content.index', compact('contents'));
+        return view('dashboard.pagecontent.index', compact('contents'));
     }
 
     /**
@@ -39,7 +39,7 @@ class PageContentController extends Controller
         $pages = Page::all();
 
         return view(
-            'dashboard.page-content.create',
+            'dashboard.pagecontent.create',
             compact('pages', 'sections')
         );
     }
@@ -69,14 +69,14 @@ class PageContentController extends Controller
         if ($request->hasFile('image')) {
             $data['image'] = $this->imageService->uploadAndResize(
                 $request->file('image'),
-                'uploads/page-content',
+                'uploads/pagecontent',
             );
         }
 
         PageContent::create($data);
 
         return redirect()
-            ->route('admin.page-content.index')
+            ->route('admin.pagecontent.index')
             ->with('success', 'Page content added successfully');
     }
 
@@ -90,7 +90,7 @@ class PageContentController extends Controller
         $sections = config('custom.contents');
 
         return view(
-            'dashboard.page-content.edit',
+            'dashboard.pagecontent.edit',
             compact('content', 'pages', 'sections')
         );
     }
@@ -132,7 +132,7 @@ class PageContentController extends Controller
 
                 $data['image'] = $this->imageService->uploadAndResize(
                     $request->file('image'),
-                    'uploads/page-content',
+                    'uploads/pagecontent',
                 );
 
             }
@@ -151,7 +151,7 @@ class PageContentController extends Controller
         $content->update($data);
 
         return redirect()
-            ->route('admin.page-content.index')
+            ->route('admin.pagecontent.index')
             ->with('success', 'Page content updated successfully');
     }
 
@@ -173,7 +173,7 @@ class PageContentController extends Controller
         $content->delete();
 
         return redirect()
-            ->route('admin.page-content.index')
+            ->route('admin.pagecontent.index')
             ->with('success', 'Page content deleted successfully');
     }
 }

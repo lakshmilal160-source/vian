@@ -28,7 +28,7 @@
 
             <!-- Right Action Pill (`[ -> ] Call Now`) + Mobile Menu Button -->
             <div class="nav-actions right-vian-action">
-                <a href="#solutions-section" class="custom-solutions-pill-btn">
+                <a href="{{ route('contact') }}" class="custom-solutions-pill-btn">
                     <span class="arrow-circle-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>

@@ -36,7 +36,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
         Route::get('/settings', [SettingController::class, 'edit'])->name('settings.edit');
         Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
-        Route::resource('page-content', PageContentController::class);
+        Route::resource('pagecontent', PageContentController::class);
 
         Route::resource('services', ServiceController::class);
         Route::post('services/{service}/toggle-status', [ServiceController::class, 'toggleStatus'])->name('services.toggle-status');

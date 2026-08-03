@@ -18,9 +18,9 @@
 /* ── About Us Page Hero Banner Spacing matching Home Page (`index.html`) exactly ── */
 .about-page-body #esperBannerHero {
     position: relative;
-    padding-top: 7rem !important;
-    padding-bottom: 2rem !important;
-    margin-top: 5rem !important;
+    padding-top: 10rem !important;
+    padding-bottom: 5rem !important;
+   
 }
 
 .about-page-body #esperBannerHero .esper-banner-inner {
@@ -38,7 +38,7 @@
 .about-editorial-hero {
     position: relative;
     max-width: 1240px;
-    margin: 0rem auto 6rem;
+    margin: 0rem auto 0rem;
     padding: 0 1.5rem;
     display: flex;
     align-items: center;
@@ -208,7 +208,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top;
+    object-position: center;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -226,7 +226,7 @@
     height: 64px;
     background: #ffffff;
     border-radius: 50%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
@@ -637,6 +637,12 @@
         margin-top: 5rem;
         padding-top: 6rem;
     }
+    .about-columns-section {
+    position: relative;
+    max-width: 1240px;
+    margin: 0rem auto 0rem !important;
+    padding: 0 1.5rem;
+}
 
     .editorial-beige-card {
         width: 100%;
@@ -703,7 +709,7 @@
     }
 
     .watermark-title {
-        font-size: 2.8rem;
+        font-size: 38px;
     }
 
     .showcase-white-backdrop {
@@ -793,3 +799,115 @@ h2.fade-in-up-scroll.is-visible {
     color: #f8fafc !important;
     text-shadow: 0 4px 25px rgba(192, 132, 252, 0.35) !important;
 }
+
+/* Global Responsive Adjustments for Tab & Mobile (Equal 60px padding) */
+@media screen and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Tablet view (769px - 1024px) padding update */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    main > section {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* Reduce large gap between banner heading and the first section */
+#esperBannerHero {
+    padding-bottom: 10px !important;
+}
+.about-page-body #esperBannerHero .esper-text-side {
+    padding-bottom: 0px !important;
+}
+.about-editorial-hero {
+    margin-top: 1rem !important;
+    padding-top: 1.5rem !important;
+}
+
+/* Tablet view internal spacing adjustments for about columns */
+@media screen and (max-width: 1024px) {
+    .section-subtitle-center {
+        margin-bottom: 1.5rem !important;
+    }
+    .columns-3-grid {
+        gap: 1.5rem !important;
+    }
+    .col-item.has-divider {
+        padding-bottom: 1.5rem !important;
+    }
+    .col-item {
+        padding: 0 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   iPhone Pro Max (430x932) Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 430px) {
+    .columns-2-grid,
+    .columns-3-grid,
+    .team-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .about-content,
+    .about-image-wrapper {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .hero-content {
+        padding: 0 15px !important;
+    }
+}
+

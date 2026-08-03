@@ -47,7 +47,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ route('admin.page-content.store') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.pagecontent.store') }}" method="POST" enctype="multipart/form-data">
 
                             @csrf
 

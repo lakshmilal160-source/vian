@@ -35,7 +35,15 @@
     background: #f0f2f5;
     color: var(--text-primary, #0f172a);
     border-top: 1px solid rgba(226, 232, 240, 0.8);
-    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+   
+}
+.gr{
+    border-bottom: 1px solid #3e3e3e !important;
+    
+    
+}
+.hj{
+    border-bottom: 80px !important;
 }
 
 [data-theme="dark"] .service-block-dark {
@@ -561,11 +569,13 @@
 .services-showcase-section {
     background: #0a0022;
 }
-.service-block-light,
-.service-block-dark {
+.service-block-light {
     background: #f8fafc !important;
 }
-.service-heading {
+.service-block-dark {
+    background: var(--bg-section-cloud, #111522) !important;
+}
+.service-block-light .service-heading {
     background: linear-gradient(90deg, #000000 0%, #35177b 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -573,11 +583,7 @@
     color: transparent !important;
     text-shadow: none !important;
 }
-.service-desc-paragraph,
-.service-bullet-item {
-    color: #475569 !important;
-}
-[data-theme="dark"] .service-heading {
+.service-block-dark .service-heading {
     background: none !important;
     -webkit-background-clip: unset !important;
     -webkit-text-fill-color: unset !important;
@@ -585,8 +591,24 @@
     color: #f8fafc !important;
     text-shadow: 0 4px 25px rgba(192, 132, 252, 0.35) !important;
 }
-[data-theme="dark"] .service-desc-paragraph,
-[data-theme="dark"] .service-bullet-item {
+.service-block-light .service-desc-paragraph,
+.service-block-light .service-bullet-item {
+    color: #475569 !important;
+}
+.service-block-dark .service-desc-paragraph,
+.service-block-dark .service-bullet-item {
+    color: #cbd5e1 !important;
+}
+[data-theme="dark"] .service-block-light .service-heading {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    color: #f8fafc !important;
+    text-shadow: 0 4px 25px rgba(192, 132, 252, 0.35) !important;
+}
+[data-theme="dark"] .service-block-light .service-desc-paragraph,
+[data-theme="dark"] .service-block-light .service-bullet-item {
     color: #cbd5e1 !important;
 }
 [data-theme="dark"] .service-block-light { background: var(--bg-section-ecosystem) !important; }
@@ -699,8 +721,8 @@
 
 /* Reduce top and bottom padding for the services banner section */
 .services-page-body #esperBannerHero {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
 }
 
 /* ==========================================================================
