@@ -1,5 +1,8 @@
 @extends('dashboard.layout.default')
-
+@section('headers')
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/jodit@latest/build/jodit.min.css">
+@endsection
 @section('content')
 
 <div class="container-xxl flex-grow-1 container-p-y">
@@ -24,4 +27,23 @@
 @endsection
 @section('jscript')
 @stack('scripts')
+@endsection
+@section('jscript')
+
+<script src="https://cdn.jsdelivr.net/npm/jodit@latest/build/jodit.min.js"></script>
+
+<script>
+    Jodit.make('#description', {
+        buttons: [
+            'bold',
+            'italic',
+            'ul',
+            'ol',
+            'link',
+            'paragraph',
+            'table'
+        ]
+    });
+</script>
+
 @endsection

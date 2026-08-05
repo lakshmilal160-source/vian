@@ -48,21 +48,12 @@
             </div>
 
             {{-- DESCRIPTION --}}
-            <div class="mb-3">
-
-                <label class="form-label">
-
-                    Description
-
-                </label>
-
-                <textarea
-                    name="description"
-                    class="form-control"
-                    rows="6"
-                >{{ old('description', $portfolio->description ?? '') }}</textarea>
-
-            </div>
+          <textarea id="description"
+          name="description"
+          rows="10"
+          class="form-control">
+    {{ old('description', $portfolio->description ?? '') }}
+</textarea>
 
             {{-- IMAGE --}}
             <div class="mb-4">

@@ -59,6 +59,9 @@
                             <label for="messageText" class="contact-label">Message</label>
                         </div>
 
+                        <div class="form-row">
+                             <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                        </div>
                         <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
                         <div class="contact-form-actions">
                             <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
@@ -138,3 +141,6 @@
             </div>
         </section>
 @endsection
+@push('script')
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endpush

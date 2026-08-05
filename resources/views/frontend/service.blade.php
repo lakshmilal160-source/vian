@@ -77,6 +77,7 @@
                                 <p class="service-subheading">✦ {{ $service->short_description }}</p>
                                 <div class="service-paragraph-content">
                                     <p class="service-desc-paragraph">{!! $service->description !!}</p>
+                                    </div>
                                 
                             </div>
                         </div>

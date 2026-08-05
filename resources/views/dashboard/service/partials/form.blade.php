@@ -41,15 +41,12 @@
             </div>
 
             {{-- DESCRIPTION --}}
-            <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea id="description" name="description" rows="10"
-                    class="form-control @error('description') is-invalid @enderror">{{ old('description', $service->description ?? '') }}</textarea>
-
-                @error('description')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
-            </div>
+           <textarea id="description"
+          name="description"
+          rows="10"
+          class="form-control">
+    {{ old('description', $service->description ?? '') }}
+</textarea>
 
             {{-- PRICE --}}
             <div class="mb-3">
