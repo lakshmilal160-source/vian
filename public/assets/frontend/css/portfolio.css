@@ -278,7 +278,7 @@ body {
 .portfolio-pagination-container {
     width: 100%;
     max-width: 1280px;
-    margin: 5rem auto 1rem auto;
+    /* margin: 5rem auto 1rem auto; */
     padding: 0 1.5rem 80px;
     display: flex;
     justify-content: center;

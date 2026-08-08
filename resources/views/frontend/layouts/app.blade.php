@@ -2,11 +2,16 @@
 <html lang="en" data-theme="light">
 
 <head>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Software Solutions | at an Affordable Cost</title>
     <meta name="description"
         content="Custom Software Solutions at an Affordable Cost. Watch human domain expertise and AI engineering unite to deliver enterprise software cleanly and affordably.">
+          <!-- Favicon -->
+       <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $globalSetting->favicon) }}">
+
+
     <!-- Google Fonts: Outfit & Inter for ultra-modern typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

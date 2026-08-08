@@ -59,7 +59,6 @@ class PortfolioController extends Controller
             $data['image'] = $this->imageService->uploadAndResize(
                 $request->file('image'),
                 'uploads/portfolio',
-                1000
             );
         }
 
@@ -114,7 +113,6 @@ class PortfolioController extends Controller
             $data['image'] = $this->imageService->uploadAndResize(
                 $request->file('image'),
                 'uploads/portfolio',
-                1000
             );
         }
 

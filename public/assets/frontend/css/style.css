@@ -5620,3 +5620,11 @@ h6.fade-in-up-scroll.is-visible,
     }
 }
 }
+.error-text {
+    padding-bottom: 38px;
+    color: red;
+}
+.link-item{
+text-decoration: none; 
+color: rgb(203, 213, 225);
+}

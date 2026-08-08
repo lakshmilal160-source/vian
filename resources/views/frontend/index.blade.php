@@ -260,12 +260,14 @@
                     @endphp
                     <!-- Card 1: Far Left (-14deg tilt) -->
                     <div class="fanned-card {{ $cardClass }}">
-                        <div class="fanned-card-img">
-                            <img src="{{ asset('storage/' . $service->image) }}" alt="Custom Software Development">
-                        </div>
-                        <div class="fanned-card-bottom-pill">
-                            <span class="pill-label">{{ $service->title }}</span>
-                        </div>
+                        <a href="{{ route('services') }}" class="vian-nav-item">
+                            <div class="fanned-card-img">
+                                <img src="{{ asset('storage/' . $service->image) }}" alt="Custom Software Development">
+                            </div>
+                            <div class="fanned-card-bottom-pill">
+                                <span class="pill-label">{{ $service->title }}</span>
+                            </div>
+                        </a>
                     </div>
                 @empty
                     <<div class="fanned-card card-tilt-left-far">No Services
@@ -275,7 +277,7 @@
 
         <!-- Part 5: Bottom Action Button (Exact Twin of Header Button) -->
         <div class="ecosystem-action-row">
-            <a href="{{ route('service') }}" class="custom-solutions-pill-btn bottom-hero-btn">
+            <a href="{{ route('services') }}" class="custom-solutions-pill-btn bottom-hero-btn">
                 <span class="arrow-circle-btn">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                         stroke-linecap="round" stroke-linejoin="round">
@@ -427,8 +429,14 @@
                     </div>
                     <!-- Solid Central Black/Dark Hub Circle (`64% / Your text here`) -->
                     <div class="infographic-core-circle">
-                        <span class="core-number" id="infographicCounter">64%</span>
-                        <span class="core-label">Your text here</span>
+                        {{-- <span class="core-number" id="infographicCounter"> --}}
+   <img src="{{ asset('assets/frontend/img/home.webp') }}"
+     alt="Loading"
+     class="loading-gif"
+     width="300"
+     height="300">
+{{-- </span> --}}
+                        
                     </div>
                 </div>
             </div>
@@ -493,7 +501,7 @@
     </section>
     <!-- SECTION 8: FAQ Section (Exact Design) -->
     <section class="faq-section" id="faq-section">
-
+        {{-- 
         <div class="faq-container">
             <h2 class="faq-main-title">FAQ's</h2>
 
@@ -510,8 +518,29 @@
                         </div>
                     @empty
                 @endforelse
-            </div>
 
+            </div>
+            </div> --}}
+        <div class="faq-container">
+            <h2 class="faq-main-title">FAQ's</h2>
+
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                @forelse ($faqs as $index=>$faq)
+                <div class="faq-item {{ $index == 1 ? 'active' : '' }}">
+                    <div class="faq-header ">
+                        <span class="faq-toggle-icon">+</span>
+                        <h3 class="faq-question-text">{{ $faq->question }}</h3>
+                    </div>
+                    <div class="faq-body">
+                        <p class="faq-answer">{{ $faq->answer }}</p>
+                    </div>
+                </div>
+                 @empty
+                @endforelse
+
+            </div>
+        </div>
     </section>
 
     <!-- SECTION 9: Bottom Statement Heading Section (`add this headiig bottom`) -->
@@ -558,44 +587,64 @@
             <!-- Contact Form Card Under Heading (`remove vetical lines bg from contact-form-card`) -->
             <div class="contact-form-wrapper-cta">
                 <!-- Background animation removed -->
-
-                <form class="contact-form-card" id="contactForm"
-                    onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent successfully.');">
-                    <div class="contact-form-grid">
-                        <div class="contact-form-group">
-                            <input type="text" id="fullName" class="contact-input" placeholder=" " required />
-                            <label for="fullName" class="contact-label">Full Name</label>
-                        </div>
-                        <div class="contact-form-group">
-                            <input type="email" id="emailAddress" class="contact-input" placeholder=" " required />
-                            <label for="emailAddress" class="contact-label">Email Address</label>
-                        </div>
+                @if ($errors->any())
+                    <div class="error-text">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                @endif
+                <form class="contact-form-card" id="contactForm" action="{{ route('contact.store') }}" method="POST">
+                    @csrf
 
-                    <div class="contact-form-group">
-                        <input type="text" id="messageSubject" class="contact-input" placeholder=" " required />
-                        <label for="messageSubject" class="contact-label">Message Subject</label>
-                    </div>
+                    <form class="contact-form-card" id="contactForm" onsubmit="">
+                        <div class="contact-form-col">
 
-                    <div class="contact-form-group textarea-group">
-                        <textarea id="messageText" class="contact-input contact-textarea" rows="4" placeholder=" " required></textarea>
-                        <label for="messageText" class="contact-label">Message</label>
-                    </div>
+                            <div class="contact-form-grid">
+                                <div class="contact-form-group">
+                                    <input type="text" name="name" id="fullName" class="contact-input"
+                                        placeholder=" " required value="{{ old('name') }}" />
+                                    <label for="fullName" class="contact-label">Full Name</label>
+                                </div>
+                                <div class="contact-form-group">
+                                    <input type="email" name="email" id="emailAddress" class="contact-input"
+                                        placeholder=" " required value="{{ old('email') }}" />
+                                    <label for="emailAddress" class="contact-label">Email Address</label>
+                                </div>
+                            </div>
 
-                    <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
-                    <div class="contact-form-actions">
-                        <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
-                            <span class="arrow-circle-btn">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </span>
-                            <span class="pill-btn-text">Send Message</span>
-                        </button>
-                    </div>
-                </form>
+                            <div class="contact-form-group">
+                                <input type="text" name="phone" id="messageSubject" class="contact-input"
+                                    placeholder=" " required value={{ old('phone') }}>
+                                <label for="messageSubject" class="contact-label">Phone</label>
+                            </div>
+
+                            <div class="contact-form-group textarea-group">
+                                <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="4" placeholder=" "
+                                    required>{{ old('message') }}</textarea>
+                                <label for="messageText" class="contact-label">Message</label>
+                            </div>
+                            <div class="form-row">
+                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
+                                </div>
+                            </div>
+
+                            <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
+                            <div class="contact-form-actions">
+                                <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
+                                    <span class="arrow-circle-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="pill-btn-text">Send Message</span>
+                                </button>
+                            </div>
+                    </form>
             </div>
         </div>
     </section>
