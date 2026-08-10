@@ -26,9 +26,7 @@
 
 @endsection
 @section('jscript')
-@stack('scripts')
-@endsection
-@section('jscript')
+
 
 <script src="https://cdn.jsdelivr.net/npm/jodit@latest/build/jodit.min.js"></script>
 

@@ -30,15 +30,15 @@
                 @enderror
             </div>
 
-            {{-- SHORT DESCRIPTION --}}
+            {{-- SHORT DESCRIPTION
             <div class="mb-3">
                 <label class="form-label">Short Description</label>
-                <textarea name="short_description" rows="3" class="form-control @error('short_description') is-invalid @enderror">{{ old('short_description', $service->short_description ?? '') }}</textarea>
+                <textarea name="short_description" rows="3" class="form-control @error('short_description') is-invalid @enderror">{{ old('short_description', $service->short_description ?? '') }}</textarea> --}}
 
-                @error('short_description')
+                {{-- @error('short_description')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
 
             {{-- DESCRIPTION --}}
            <textarea id="description"
@@ -49,7 +49,7 @@
 </textarea>
 
             {{-- PRICE --}}
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label class="form-label">Price</label>
                 <input type="number" step="0.01" name="price"
                     class="form-control @error('price') is-invalid @enderror"
@@ -57,7 +57,7 @@
                 @error('price')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
-            </div>
+            </div> --}}
 
             {{-- ICON IMAGE --}}
             <div class="mb-3">
