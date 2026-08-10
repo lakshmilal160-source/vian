@@ -3624,10 +3624,11 @@ h2.cloud-main-heading {
 
 
 /* ==========================================================================
-   SECTION 8: FAQ Section (Exact Design Match)
-   ========================================================================== */
+SECTION 8: FAQ Section (Exact Design Match)
+========================================================================== */
+
 /* =========================================
-   FAQ SECTION
+FAQ SECTION
 ========================================= */
 
 .faq-section {
@@ -3644,7 +3645,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ CONTAINER
+FAQ CONTAINER
 ========================================= */
 
 .faq-container {
@@ -3656,7 +3657,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ TITLE
+FAQ TITLE
 ========================================= */
 
 .faq-main-title {
@@ -3665,7 +3666,7 @@ h2.cloud-main-heading {
 
     text-align: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
 
     font-size: 68px;
     line-height: 1.1;
@@ -3678,7 +3679,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ ACCORDION
+FAQ ACCORDION
 ========================================= */
 
 .faq-accordion {
@@ -3687,7 +3688,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ ITEM
+FAQ ITEM
 ========================================= */
 
 .faq-item {
@@ -3710,7 +3711,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ HEADER
+FAQ HEADER
 ========================================= */
 
 .faq-header {
@@ -3731,7 +3732,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ PLUS / MINUS ICON
+FAQ PLUS / MINUS ICON
 ========================================= */
 
 .faq-toggle-icon {
@@ -3744,7 +3745,7 @@ h2.cloud-main-heading {
     align-items: center;
     justify-content: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
 
     font-size: 0;
 
@@ -3755,7 +3756,7 @@ h2.cloud-main-heading {
 
 
 /* -----------------------------------------
-   CLOSED = PLUS
+CLOSED = PLUS
 ----------------------------------------- */
 
 .faq-toggle-icon::before {
@@ -3772,7 +3773,7 @@ h2.cloud-main-heading {
 
 
 /* -----------------------------------------
-   OPEN = MINUS
+OPEN = MINUS
 ----------------------------------------- */
 
 .faq-item.active .faq-toggle-icon::before {
@@ -3789,7 +3790,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   QUESTION TEXT
+QUESTION TEXT
 ========================================= */
 
 .faq-question-text {
@@ -3797,7 +3798,7 @@ h2.cloud-main-heading {
 
     color: #FFFFFF;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
 
     font-size: 20px;
 
@@ -3808,7 +3809,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ ANSWER BODY
+FAQ ANSWER BODY
 ========================================= */
 
 .faq-body {
@@ -3830,7 +3831,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   FAQ ANSWER TEXT
+FAQ ANSWER TEXT
 ========================================= */
 
 .faq-answer {
@@ -3838,7 +3839,7 @@ h2.cloud-main-heading {
 
     color: #C8C1D3;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
 
     font-size: 16px;
 
@@ -3849,7 +3850,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   ACTIVE FAQ
+ACTIVE FAQ
 ========================================= */
 
 .faq-item.active .faq-body {
@@ -3862,7 +3863,17 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   HOVER
+ACTIVE QUESTION MUST STAY WHITE
+========================================= */
+
+.faq-item.active .faq-header .faq-question-text,
+.faq-item.active .faq-header h3.faq-question-text {
+    color: #FFFFFF !important;
+}
+
+
+/* =========================================
+HOVER
 ========================================= */
 
 .faq-item:hover {
@@ -3871,7 +3882,7 @@ h2.cloud-main-heading {
 
 
 /* =========================================
-   EMPTY FAQ
+EMPTY FAQ
 ========================================= */
 
 .faq-empty {
@@ -3879,12 +3890,12 @@ h2.cloud-main-heading {
 
     text-align: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
 
 /* =========================================
-   MOBILE RESPONSIVE
+MOBILE RESPONSIVE
 ========================================= */
 
 @media (max-width: 768px) {
@@ -3938,16 +3949,25 @@ h2.cloud-main-heading {
         min-width: 20px;
 
         margin-right: 20px;
+
+        /* Prevent duplicate + / - from HTML */
+        font-size: 0 !important;
+
+        color: transparent !important;
     }
 
 
     .faq-toggle-icon::before {
-        font-size: 24px;
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
     }
 
 
     .faq-item.active .faq-toggle-icon::before {
-        font-size: 24px;
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
     }
 
 
@@ -3957,6 +3977,16 @@ h2.cloud-main-heading {
         font-size: 17px;
 
         line-height: 1.4;
+
+        color: #FFFFFF !important;
+    }
+
+
+    /* ACTIVE QUESTION */
+
+    .faq-item.active .faq-header .faq-question-text,
+    .faq-item.active .faq-header h3.faq-question-text {
+        color: #FFFFFF !important;
     }
 
 
@@ -3973,12 +4003,42 @@ h2.cloud-main-heading {
         font-size: 15px;
 
         line-height: 1.6;
+
+        color: #C8C1D3 !important;
+    }
+
+
+    /* Keep FAQ text white when mobile hover state is triggered */
+
+    .faq-item:hover .faq-header,
+    .faq-item:hover .faq-header *,
+    .faq-item:hover .faq-question-text,
+    .faq-item:active .faq-header,
+    .faq-item:active .faq-header *,
+    .faq-item:active .faq-question-text {
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-item:hover .faq-answer,
+    .faq-item:active .faq-answer {
+        color: #C8C1D3 !important;
+    }
+
+
+    /* Keep active FAQ question white */
+
+    .faq-item.active .faq-header,
+    .faq-item.active .faq-header *,
+    .faq-item.active .faq-question-text,
+    .faq-item.active .faq-header h3 {
+        color: #FFFFFF !important;
     }
 }
 
 
 /* =========================================
-   SMALL MOBILE
+SMALL MOBILE
 ========================================= */
 
 @media (max-width: 480px) {
@@ -4004,11 +4064,42 @@ h2.cloud-main-heading {
 
     .faq-toggle-icon {
         margin-right: 15px;
+
+        /* Keep only one + / - visible */
+        font-size: 0 !important;
+
+        color: transparent !important;
+    }
+
+
+    .faq-toggle-icon::before {
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-item.active .faq-toggle-icon::before {
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
     }
 
 
     .faq-question-text {
         font-size: 16px;
+
+        color: #FFFFFF !important;
+    }
+
+
+    /* ACTIVE QUESTION */
+
+    .faq-item.active .faq-header,
+    .faq-item.active .faq-header *,
+    .faq-item.active .faq-question-text,
+    .faq-item.active .faq-header h3 {
+        color: #FFFFFF !important;
     }
 
 
@@ -4021,9 +4112,124 @@ h2.cloud-main-heading {
 
     .faq-answer {
         font-size: 14px;
+
+        color: #C8C1D3 !important;
+    }
+
+
+    /* Keep FAQ text white during mobile hover/active state */
+
+    .faq-item:hover .faq-header,
+    .faq-item:hover .faq-header *,
+    .faq-item:hover .faq-question-text,
+    .faq-item:active .faq-header,
+    .faq-item:active .faq-header *,
+    .faq-item:active .faq-question-text {
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-item:hover .faq-answer,
+    .faq-item:active .faq-answer {
+        color: #C8C1D3 !important;
+    }
+
+
+    /* Final active-state override */
+
+    .faq-item.active .faq-header .faq-question-text,
+    .faq-item.active .faq-header h3.faq-question-text {
+        color: #FFFFFF !important;
     }
 }
 
+/* =========================================
+SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .faq-section {
+        padding: 20px 12px 50px;
+    }
+
+
+    .faq-main-title {
+        font-size: 42px;
+
+        margin-bottom: 35px;
+    }
+
+
+    .faq-header {
+        min-height: 72px;
+
+        padding: 0 18px;
+    }
+
+
+    .faq-toggle-icon {
+        margin-right: 15px;
+
+        /* Keep only one + / - visible */
+        font-size: 0 !important;
+
+        color: transparent !important;
+    }
+
+
+    .faq-toggle-icon::before {
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-item.active .faq-toggle-icon::before {
+        font-size: 24px !important;
+
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-question-text {
+        font-size: 16px;
+
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-body {
+        padding-left: 53px;
+
+        padding-right: 18px;
+    }
+
+
+    .faq-answer {
+        font-size: 14px;
+
+        color: #C8C1D3 !important;
+    }
+
+
+    /* Keep FAQ text white during mobile hover/active state */
+
+    .faq-item:hover .faq-header,
+    .faq-item:hover .faq-header *,
+    .faq-item:hover .faq-question-text,
+    .faq-item:active .faq-header,
+    .faq-item:active .faq-header *,
+    .faq-item:active .faq-question-text {
+        color: #FFFFFF !important;
+    }
+
+
+    .faq-item:hover .faq-answer,
+    .faq-item:active .faq-answer {
+        color: #C8C1D3 !important;
+    }
+}
 /* ==========================================================================
    SECTION 9: Bottom Statement Heading Section (`add this headiig bottom`)
    ========================================================================== */

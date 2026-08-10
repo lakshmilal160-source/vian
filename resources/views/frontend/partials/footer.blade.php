@@ -47,39 +47,92 @@
             <!-- Column 4: Contact Us -->
             <div class="footer-column">
 
-                <h4 style="margin-bottom:20px;">Contact Us</h4>
+    <h4 style="margin-bottom:20px;">Contact Us</h4>
 
-                <div style="display:flex; align-items:flex-start; gap:12px; margin-bottom:18px;">
-                    <i class="fa-solid fa-location-dot" style="margin-top:4px; width:20px;"></i>
+    <div class="footer-contact-details">
 
-                    <p style="margin:0; line-height:1.6;">
-                        {{ $globalSetting->address }}
-                    </p>
-                </div>
+        <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
 
-                <div style="display:flex; align-items:center; gap:12px; margin-bottom:18px;">
-                    <i class="fa-solid fa-envelope" style="width:20px;"></i>
-
-                    <a href="mailto:{{ $globalSetting->email }}" class="link-item">
-                        {{ $globalSetting->email }}
-                    </a>
-                </div>
-
-                <div style="display:flex; align-items:center; gap:12px;">
-                    <i class="fa-solid fa-phone" style="width:20px;"></i>
-
-                    <a href="tel:{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}" class="link-item">
-                        +{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}
-                    </a>
-                </div>
-
-            </div>
-        </div>
-        <div class="footer-bottom center-align-footer">
-            <p class="footer-copy center-copy">
-                &copy; 2026 VIAN Consultancy Services. All rights reserved. Made with <i _ngcontent-ng-c2257550061=""
-                    class="fas fa-heart"></i> by Sensations Solutions.
+            <p>
+                {{ $globalSetting->address }}
             </p>
         </div>
+
+        <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+
+            <a href="mailto:{{ $globalSetting->email }}" class="link-item">
+                {{ $globalSetting->email }}
+            </a>
+        </div>
+
+        <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+
+            <a href="tel:{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}" class="link-item">
+                +{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<style>
+.footer-contact-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.footer-contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.footer-contact-item i {
+    width: 20px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.footer-contact-item p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* MOBILE ONLY */
+@media (max-width: 768px) {
+    .footer-column {
+        text-align: center;
+    }
+
+    .footer-contact-details {
+        align-items: center;
+    }
+
+    .footer-contact-item {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .footer-contact-item p,
+    .footer-contact-item a {
+        text-align: center;
+    }
+}
+</style>
+        </div>
+<div class="footer-bottom center-align-footer">
+    <p class="footer-copy center-copy">
+        &copy; 2026 VIAN Consultancy Services. All rights reserved. Crafted with <i _ngcontent-ng-c2257550061="" class="fas fa-heart"></i> by <a href="https://sensationssolutions.com" style="color: inherit; text-decoration: none;">Sensations Solutions</a>
+    </p>
+</div>
     </div>
 </footer>

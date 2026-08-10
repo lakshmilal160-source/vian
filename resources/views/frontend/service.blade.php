@@ -39,7 +39,7 @@
                             <div class="service-content-wrapper">
                                 <h2 class="service-heading">{{ $service->title }}</h2>
                                 <hr class="service-heading-divider">
-                                <p class="service-subheading">✦ {{ $service->short_description }}</p>
+                                {{-- <p class="service-subheading">✦ {{ $service->short_description }}</p> --}}
                                 <div class="service-paragraph-content">
                                     <p class="service-desc-paragraph">{!! $service->description !!}</p>
 
@@ -74,7 +74,7 @@
                             <div class="service-content-wrapper">
                                 <h2 class="service-heading">{{ $service->title }}</h2>
                                 <hr class="service-heading-divider">
-                                <p class="service-subheading">✦ {{ $service->short_description }}</p>
+                                {{-- <p class="service-subheading">✦ {{ $service->short_description }}</p> --}}
                                 <div class="service-paragraph-content">
                                     <p class="service-desc-paragraph">{!! $service->description !!}</p>
                                     </div>
