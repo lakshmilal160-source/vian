@@ -622,7 +622,7 @@
                             </div>
 
                             <div class="contact-form-group textarea-group">
-                                <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="4" placeholder=" "
+                                <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="2" placeholder=" "
                                     required>{{ old('message') }}</textarea>
                                 <label for="messageText" class="contact-label">Message</label>
                             </div>

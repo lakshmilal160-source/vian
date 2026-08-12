@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="contact-form-group textarea-group">
-                        <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="4" placeholder=" "
+                        <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="2" placeholder=" "
                             required >{{ old('message') }}</textarea>
                         <label for="messageText" class="contact-label">Message</label>
                     </div>
@@ -101,7 +101,7 @@
                 <!-- Call Us -->
                 <div class="cinfo-block">
                     <h3 class="cinfo-title">Call Us</h3>
-                    <a href="tel:+12351251281" class="cinfo-action-link cinfo-link-orange">
+                    <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="cinfo-action-link cinfo-link-orange">
                         <span class="cinfo-icon-circle cinfo-icon-orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -109,7 +109,7 @@
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.8 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l1.28-1.34a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
                         </span>
-                        <span>(235) 325-1281</span>
+                        <span>+ {{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}</span>
                     </a>
                 </div>
 
@@ -127,7 +127,7 @@
                                 <circle cx="12" cy="10" r="3" />
                             </svg>
                         </span>
-                        <span>1234 Divi St. #111, San Francisco, CA</span>
+                        <span> {{ $globalSetting->address??"" }}</span>
                     </a>
                 </div>
 
@@ -135,16 +135,16 @@
 
                 <!-- Live Chat -->
                 <div class="cinfo-block">
-                    <h3 class="cinfo-title">Live Chat</h3>
-                    <button type="button" class="cinfo-action-link cinfo-link-orange cinfo-chat-btn" id="startChatBtn">
+                    <h3 class="cinfo-title">E-mail</h3>
+                    <a href="mailto:{{ $globalSetting->email??"" }}" class="cinfo-action-link cinfo-link-orange">
                         <span class="cinfo-icon-circle cinfo-icon-orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                             </svg>
                         </span>
-                        <span>Start Chat</span>
-                    </button>
+                        <span>Email</span>
+                    </a>
                 </div>
 
             </div>

@@ -4707,6 +4707,7 @@ button.custom-solutions-pill-btn.contact-submit-pill-btn {
 
     box-shadow:
         0 4px 14px rgba(0, 0, 0, 0.06);
+    margin-top: 7px;
 }
 
 [data-theme="dark"] button.custom-solutions-pill-btn.contact-submit-pill-btn {
