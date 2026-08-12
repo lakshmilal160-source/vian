@@ -36,6 +36,26 @@
 
     <!-- Main Scroll Container for Hero Stage -->
     <main class="contact-main-wrapper">
+        @if (session('success'))
+            <div id="successPopup" class="success-popup">
+                <div class="success-popup-content">
+                    <button type="button" class="success-popup-close" onclick="closeSuccessPopup()">
+                        &times;
+                    </button>
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <h3>Message Sent!</h3>
+                    <p>{{ session('success') }}</p>
+
+                    <button type="button" class="success-popup-btn" onclick="closeSuccessPopup()">
+                        OK
+                    </button>
+                </div>
+            </div>
+        @endif
         @yield('contents')
     </main>
 

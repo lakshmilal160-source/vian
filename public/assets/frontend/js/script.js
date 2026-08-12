@@ -1308,4 +1308,18 @@
     initPortfolioPagination();
     animationLoop();
 
+ 
+
 })();
+   function closeSuccessPopup() {
+            const popup = document.getElementById('successPopup');
+
+            if (popup) {
+                popup.remove();
+            }
+        }
+
+        // Automatically close after 5 seconds
+        setTimeout(function () {
+            closeSuccessPopup();
+        }, 50000);
