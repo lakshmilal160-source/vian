@@ -2,7 +2,7 @@
     <header class="navbar vian-header">
         <div class="nav-container">
             <!-- Left: VIAN Consultancy Services Logo (`assets/vian-02.png`) -->
-            <a href="#hero" class="vian-brand-logo" title="VIAN Consultancy Services">
+            <a href="{{route('home')}}" class="vian-brand-logo" title="VIAN Consultancy Services">
                 <img src="assets/frontend/img/vian-02.png" alt="VIAN Consultancy Services" class="vian-logo-img">
             </a>
 
@@ -28,7 +28,7 @@
 
             <!-- Right Action Pill (`[ -> ] Call Now`) + Mobile Menu Button -->
             <div class="nav-actions right-vian-action">
-                <a href="tel:{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}" class="custom-solutions-pill-btn">
+                <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="custom-solutions-pill-btn">
                     <span class="arrow-circle-btn">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="5" y1="12" x2="19" y2="12"></line>

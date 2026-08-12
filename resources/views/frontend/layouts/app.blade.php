@@ -8,8 +8,8 @@
     <title>Custom Software Solutions | at an Affordable Cost</title>
     <meta name="description"
         content="Custom Software Solutions at an Affordable Cost. Watch human domain expertise and AI engineering unite to deliver enterprise software cleanly and affordably.">
-          <!-- Favicon -->
-       <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . $globalSetting->favicon) }}">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}">
 
 
     <!-- Google Fonts: Outfit & Inter for ultra-modern typography -->
@@ -44,7 +44,7 @@
 
     <!-- Scripts -->
     {{-- <script src="script.js"> --}}
-        <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
     {{-- </script> --}}
     @stack('script')
 </body>

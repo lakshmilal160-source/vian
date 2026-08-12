@@ -55,23 +55,23 @@
             <i class="fa-solid fa-location-dot"></i>
 
             <p>
-                {{ $globalSetting->address }}
+                {{ $globalSetting->address??"" }}
             </p>
         </div>
 
         <div class="footer-contact-item">
             <i class="fa-solid fa-envelope"></i>
 
-            <a href="mailto:{{ $globalSetting->email }}" class="link-item">
-                {{ $globalSetting->email }}
+            <a href="mailto:{{ $globalSetting->email??"" }}" class="link-item">
+                {{ $globalSetting->email??"" }}
             </a>
         </div>
 
         <div class="footer-contact-item">
             <i class="fa-solid fa-phone"></i>
 
-            <a href="tel:{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}" class="link-item">
-                +{{ $globalSetting->phone_1_country_code_id }} {{ $globalSetting->phone_1 }}
+            <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="link-item">
+                +{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}
             </a>
         </div>
 
