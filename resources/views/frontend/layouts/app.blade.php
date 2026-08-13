@@ -2,7 +2,6 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Software Solutions | at an Affordable Cost</title>

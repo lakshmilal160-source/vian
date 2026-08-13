@@ -3,7 +3,7 @@
         <div class="nav-container">
             <!-- Left: VIAN Consultancy Services Logo (`assets/vian-02.png`) -->
             <a href="{{route('home')}}" class="vian-brand-logo" title="VIAN Consultancy Services">
-                <img src="assets/frontend/img/vian-02.png" alt="VIAN Consultancy Services" class="vian-logo-img">
+                <img src="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}" alt="VIAN Consultancy Services" class="vian-logo-img">
             </a>
 
             <!-- Center Navigation Pill (`[ Our Expertise | About Us | Blog ]`) -->

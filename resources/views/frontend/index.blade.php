@@ -430,13 +430,10 @@
                     <!-- Solid Central Black/Dark Hub Circle (`64% / Your text here`) -->
                     <div class="infographic-core-circle">
                         {{-- <span class="core-number" id="infographicCounter"> --}}
-   <img src="{{ asset('assets/frontend/img/home.webp') }}"
-     alt="Loading"
-     class="loading-gif"
-     width="300"
-     height="300">
-{{-- </span> --}}
-                        
+                        <img src="{{ asset('assets/frontend/img/home.webp') }}" alt="Loading" class="loading-gif"
+                            width="300" height="300">
+                        {{-- </span> --}}
+
                     </div>
                 </div>
             </div>
@@ -527,16 +524,16 @@
             <div class="faq-accordion">
                 <!-- FAQ Item 1 -->
                 @forelse ($faqs as $index=>$faq)
-                <div class="faq-item {{ $index == 1 ? 'active' : '' }}">
-                    <div class="faq-header ">
-                        <span class="faq-toggle-icon">+</span>
-                        <h3 class="faq-question-text">{{ $faq->question }}</h3>
+                    <div class="faq-item {{ $index == 1 ? 'active' : '' }}">
+                        <div class="faq-header ">
+                            <span class="faq-toggle-icon">+</span>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
+                        </div>
+                        <div class="faq-body">
+                            <p class="faq-answer">{{ $faq->answer }}</p>
+                        </div>
                     </div>
-                    <div class="faq-body">
-                        <p class="faq-answer">{{ $faq->answer }}</p>
-                    </div>
-                </div>
-                 @empty
+                @empty
                 @endforelse
 
             </div>
@@ -599,52 +596,51 @@
                 <form class="contact-form-card" id="contactForm" action="{{ route('contact.store') }}" method="POST">
                     @csrf
 
-                    <form class="contact-form-card" id="contactForm" onsubmit="">
-                        <div class="contact-form-col">
+                    <div class="contact-form-col">
 
-                            <div class="contact-form-grid">
-                                <div class="contact-form-group">
-                                    <input type="text" name="name" id="fullName" class="contact-input"
-                                        placeholder=" " required value="{{ old('name') }}" />
-                                    <label for="fullName" class="contact-label">Full Name</label>
-                                </div>
-                                <div class="contact-form-group">
-                                    <input type="email" name="email" id="emailAddress" class="contact-input"
-                                        placeholder=" " required value="{{ old('email') }}" />
-                                    <label for="emailAddress" class="contact-label">Email Address</label>
-                                </div>
-                            </div>
-
+                        <div class="contact-form-grid">
                             <div class="contact-form-group">
-                                <input type="text" name="phone" id="messageSubject" class="contact-input"
-                                    placeholder=" " required value={{ old('phone') }}>
-                                <label for="messageSubject" class="contact-label">Phone</label>
+                                <input type="text" name="name" id="fullName" class="contact-input"
+                                    placeholder=" " required value="{{ old('name') }}" />
+                                <label for="fullName" class="contact-label">Full Name</label>
                             </div>
+                            <div class="contact-form-group">
+                                <input type="email" name="email" id="emailAddress" class="contact-input"
+                                    placeholder=" " required value="{{ old('email') }}" />
+                                <label for="emailAddress" class="contact-label">Email Address</label>
+                            </div>
+                        </div>
 
-                            <div class="contact-form-group textarea-group">
-                                <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="2" placeholder=" "
-                                    required>{{ old('message') }}</textarea>
-                                <label for="messageText" class="contact-label">Message</label>
-                            </div>
-                            <div class="form-row">
-                                <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
-                                </div>
-                            </div>
+                        <div class="contact-form-group">
+                            <input type="text" name="phone" id="messageSubject" class="contact-input"
+                                placeholder=" " required value={{ old('phone') }}>
+                            <label for="messageSubject" class="contact-label">Phone</label>
+                        </div>
 
-                            <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
-                            <div class="contact-form-actions">
-                                <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
-                                    <span class="arrow-circle-btn">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                                            stroke-linecap="round" stroke-linejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12 5 19 12 12 19"></polyline>
-                                        </svg>
-                                    </span>
-                                    <span class="pill-btn-text">Send Message</span>
-                                </button>
+                        <div class="contact-form-group textarea-group">
+                            <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="2" placeholder=" "
+                                required>{{ old('message') }}</textarea>
+                            <label for="messageText" class="contact-label">Message</label>
+                        </div>
+                        <div class="form-row">
+                            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
                             </div>
-                    </form>
+                        </div>
+
+                        <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
+                        <div class="contact-form-actions">
+                            <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
+                                <span class="arrow-circle-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                                <span class="pill-btn-text">Send Message</span>
+                            </button>
+                        </div>
+                </form>
             </div>
         </div>
     </section>
@@ -671,3 +667,6 @@
         </div>
     </section>
 @endsection
+@push('script')
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+@endpush
