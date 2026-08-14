@@ -45,7 +45,7 @@
                 <div class="hand-wrapper left-hand" id="leftHandWrapper">
                     <div class="hand-visual">
                         <!-- AI Generated PNG Hand -->
-                        <img src="assets/frontend/img/human_hand_left.png" alt="Human Hand reaching from left"
+                        <img src="assets/frontend/img/human_hand_left.webp" alt="Human Hand reaching from left"
                             class="hand-img img-human-left" id="leftHandImg" onerror="this.style.display='none'">
 
                         <!-- Procedural Vector SVG Fallback/Alternative Human Hand -->
@@ -127,7 +127,7 @@
                 <div class="hand-wrapper right-hand" id="rightHandWrapper">
                     <div class="hand-visual">
                         <!-- AI Generated PNG Hand -->
-                        <img src="assets/frontend/img/robotic_hand_right.png"
+                        <img src="assets/frontend/img/robotic_hand_right.webp"
                             alt="Sleek White Ceramic Robotic Hand pointing left" class="hand-img img-robotic-right"
                             id="rightHandImg" onerror="this.style.display='none'">
 
