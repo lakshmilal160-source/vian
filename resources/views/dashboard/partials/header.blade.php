@@ -56,7 +56,7 @@
                 <div class="app-brand demo">
                     <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
                         <span class="app-brand-logo demo">
-                           <img src="{{asset('storage/'.$globalSetting->favicon)}}" width="50">
+                           <img src="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}" width="50">
                         </span>
                         <span class="app-brand-text demo menu-text fw-bolder ms-2">{{ config('custom.app_name') }}
                         </span>
@@ -88,7 +88,7 @@
                     </li>
                     {{-- Page Contents --}}
                     <li class="menu-item {{ request()->routeIs('admin.page-content.*') ? 'active' : '' }}">
-                        <a href="{{ route('admin.page-content.index') }}" class="menu-link">
+                        <a href="{{ route('admin.pagecontent.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-collection"></i>
                             <div>Page Contents</div>
                         </a>
@@ -113,6 +113,18 @@
                         </a>
                     </li>
 
+                    <li class="menu-item {{ request()->routeIs('admin.faqs.*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.faqs.index') }}" class="menu-link">
+
+                            <i class="menu-icon tf-icons bx bx-briefcase"></i>
+
+                            <div>
+                                Faqs
+                            </div>
+
+                        </a>
+                    </li>
+
                     <li class="menu-item {{ request()->routeIs('admin.clients.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.clients.index') }}" class="menu-link">
 
@@ -125,12 +137,12 @@
                         </a>
                     </li>
                     {{-- Testimonials --}}
-                    <li class="menu-item {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
+                    <!-- <li class="menu-item {{ request()->routeIs('admin.testimonials.*') ? 'active' : '' }}">
                         <a href="{{ route('admin.testimonials.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-user-circle"></i>
                             <div>Testimonials</div>
                         </a>
-                    </li>
+                    </li> -->
 
                     {{-- Contacts --}}
                     <li class="menu-item {{ request()->routeIs('admin.contacts.*') ? 'active' : '' }}">

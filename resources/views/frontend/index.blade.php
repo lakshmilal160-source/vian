@@ -1,594 +1,672 @@
 @extends('frontend.layouts.app')
+@section('contents')
+    <!-- Sticky Hero Stage where scrolling moves the hands inside to hide content and meet -->
+    <section class="hero-stage-container" id="hero">
+        <div class="hero-sticky-viewport">
 
-@section('title', 'Custom Software Solutions')
+            <!-- Sleek IT Company Architecture Ring Ecosystem behind text (Simple & Clean) -->
+            <div class="it-tech-ecosystem" id="itTechEcosystem">
+                <!-- Soft clean central glow -->
+                <div class="tech-glow-core"></div>
 
-@section('content')
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>
-                Custom Software<br>
-                <span class="italic-cyan">Solutions</span> at an<br>
-                Affordable Cost
-                <svg class="arrow-svg" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 35C20 10 40 40 60 15M60 15L55 18M60 15L65 20" stroke="#00f2ff" stroke-width="3"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </h1>
-            <p class="hero-desc">
-                {{ $contents['description'] ? Str::of($contents['description']->description)->stripTags() : '' }}</p>
+                <!-- Clean, Sophisticated Enterprise Orbit Rings -->
+                <div class="clean-orbit-ring outer-orbit">
+                    <span class="network-node node-cyan"></span>
+                    <span class="network-node node-purple"></span>
+                </div>
+                <div class="clean-orbit-ring inner-orbit">
+                    <span class="network-node node-blue"></span>
+                </div>
 
-            <a href="{{ route('contact') }}" class="btn-get-started">
-                ENQUIRY NOW <div class="circle-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+
+            </div>
+
+            <!-- Center Title Group (`Custom Software Solutions at an Affordable Cost`) -->
+            <!-- As hands move inside when scrolling down, this content smoothly hides/blurs out (`to hide contant`) -->
+            {{-- @forelse ($faqs as $faq) --}}
+            <div class="hero-title-group" id="titleGroup">
+                <h1 class="main-heading-new">
+                    <span class="line-top">Custom Software</span>
+                    <span class="line-middle purple-gradient-text">Solutions</span>
+                    <span class="line-bottom">at an Affordable Cost</span>
+                </h1>
+                <p class="hero-sub-caption" id="subCaption">
+                    Human domain expertise and white-gloss robotic intelligence uniting to architect clean, scalable IT
+                    software.
+                </p>
+            </div>
+
+            <!-- Darkening Overlay Mask right over Hero Text while Hands glide over top (`add overlay on it`) -->
+            <div class="hero-text-overlay" id="heroTextOverlay"></div>
+
+            <!-- Hands Stage Container -->
+            <div class="hands-stage" id="handsStage">
+                <!-- Left Hand: Human Hand reaching from the left (`assets/human_hand_left.png`) -->
+                <div class="hand-wrapper left-hand" id="leftHandWrapper">
+                    <div class="hand-visual">
+                        <!-- AI Generated PNG Hand -->
+                        <img src="assets/frontend/img/human_hand_left.webp" alt="Human Hand reaching from left"
+                            class="hand-img img-human-left" id="leftHandImg" onerror="this.style.display='none'">
+
+                        <!-- Procedural Vector SVG Fallback/Alternative Human Hand -->
+                        <div class="svg-hand-container" id="leftHandSvg" style="display: none;">
+                            <svg viewBox="0 0 600 250" class="vector-arm vector-human-left">
+                                <defs>
+                                    <linearGradient id="skinGradLeft" x1="0%" y1="0%" x2="100%"
+                                        y2="0%">
+                                        <stop offset="0%" stop-color="#cca080" />
+                                        <stop offset="30%" stop-color="#e0b190" />
+                                        <stop offset="65%" stop-color="#eac0a3" />
+                                        <stop offset="100%" stop-color="#f5d0b5" />
+                                    </linearGradient>
+                                    <linearGradient id="skinShadeLeft" x1="0%" y1="0%" x2="0%"
+                                        y2="100%">
+                                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+                                        <stop offset="100%" stop-color="#000000" stop-opacity="0.18" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Forearm entering from left -->
+                                <path d="M0 65 C90 70 170 85 240 100 L260 165 C180 180 100 175 0 165 Z"
+                                    fill="url(#skinGradLeft)" />
+                                <path d="M0 65 C90 70 170 85 240 100 L260 165 C180 180 100 175 0 165 Z"
+                                    fill="url(#skinShadeLeft)" />
+                                <!-- Wrist & Palm -->
+                                <path d="M240 100 C290 102 340 105 380 112 L400 165 C350 185 290 180 260 165 Z"
+                                    fill="url(#skinGradLeft)" />
+                                <!-- Folded lower fingers -->
+                                <path d="M380 135 C405 150 430 165 415 185 C400 200 375 180 365 165" fill="none"
+                                    stroke="url(#skinGradLeft)" stroke-width="22" stroke-linecap="round" />
+                                <path d="M365 145 C385 160 405 180 390 195 C380 205 355 185 350 170" fill="none"
+                                    stroke="url(#skinGradLeft)" stroke-width="18" stroke-linecap="round" />
+                                <!-- Extended Index Finger reaching right towards center -->
+                                <g class="human-index-group">
+                                    <path d="M380 112 C420 114 470 117 520 120 L522 136 C470 134 420 133 380 132 Z"
+                                        fill="url(#skinGradLeft)" />
+                                    <path d="M380 112 C420 114 470 117 520 120 L522 136 C470 134 420 133 380 132 Z"
+                                        fill="url(#skinShadeLeft)" />
+                                    <path d="M520 120 C555 122 580 124 595 124 C580 128 555 133 522 136 Z"
+                                        fill="url(#skinGradLeft)" />
+                                    <!-- Fingertip glow spot -->
+                                    <circle cx="592" cy="124" r="6" fill="#fffaf0" opacity="0.8" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Center IT Company Fingertip Meeting Animation (Clean, Standard Quantum Energy Ripples) -->
+                <div class="synapse-spark-zone" id="sparkZone">
+                    <canvas id="synapseCanvas" class="synapse-canvas"></canvas>
+
+                    <!-- Clean Corporate IT Singularity Core -->
+                    <div class="spark-light-core" id="sparkCore"></div>
+
+                    <!-- Ultra-Clean Concentric Quantum Energy Ripples -->
+                    <div class="quantum-ring ripple-1"></div>
+                    <div class="quantum-ring ripple-2"></div>
+                    <div class="quantum-ring ripple-3"></div>
+
+                    <!-- Scroll Down Box right under the fingertip meeting animation (`under annimation`) -->
+                    <div class="touch-scroll-prompt" id="touchScrollDownPrompt"
+                        onclick="window.scrollBy({top: 600, behavior: 'smooth'})" title="Scroll Down To Explore">
+                        <div class="mouse-icon">
+                            <span class="mouse-wheel"></span>
+                        </div>
+                        <span class="prompt-text">Scroll Down To Explore</span>
+                        <div class="animated-arrow-down">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hand: White Glossy Robotic Hand reaching from right (`assets/robotic_hand_right.png`) -->
+                <div class="hand-wrapper right-hand" id="rightHandWrapper">
+                    <div class="hand-visual">
+                        <!-- AI Generated PNG Hand -->
+                        <img src="assets/frontend/img/robotic_hand_right.webp"
+                            alt="Sleek White Ceramic Robotic Hand pointing left" class="hand-img img-robotic-right"
+                            id="rightHandImg" onerror="this.style.display='none'">
+
+                        <!-- Procedural Vector SVG Fallback/Alternative White Glossy Robotic Arm -->
+                        <div class="svg-hand-container" id="rightHandSvg" style="display: none;">
+                            <svg viewBox="0 0 600 250" class="vector-arm vector-robotic-right">
+                                <defs>
+                                    <linearGradient id="whiteCeramicGrad" x1="100%" y1="0%" x2="0%"
+                                        y2="0%">
+                                        <stop offset="0%" stop-color="#475569" />
+                                        <stop offset="30%" stop-color="#e2e8f0" />
+                                        <stop offset="65%" stop-color="#ffffff" />
+                                        <stop offset="100%" stop-color="#f8fafc" />
+                                    </linearGradient>
+                                    <linearGradient id="purpleChrome" x1="0%" y1="0%" x2="100%"
+                                        y2="100%">
+                                        <stop offset="0%" stop-color="#581c87" />
+                                        <stop offset="100%" stop-color="#9333ea" />
+                                    </linearGradient>
+                                    <filter id="purpleGlow">
+                                        <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                                        <feMerge>
+                                            <feMergeNode in="coloredBlur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <!-- Forearm ceramic shell -->
+                                <path d="M600 60 L420 70 L360 105 L340 145 L420 170 L600 160 Z"
+                                    fill="url(#whiteCeramicGrad)" stroke="#cbd5e1" stroke-width="2" />
+                                <path d="M580 75 C520 75 460 85 410 105 L440 155 C490 145 540 145 590 145 Z" fill="#ffffff"
+                                    opacity="0.95" />
+                                <!-- Wrist Carbon & Purple LED Joint -->
+                                <circle cx="330" cy="125" r="32" fill="#1e293b" stroke="#9333ea"
+                                    stroke-width="2.5" filter="url(#purpleGlow)" />
+                                <circle cx="330" cy="125" r="18" fill="#a855f7" opacity="0.9"
+                                    filter="url(#purpleGlow)" />
+                                <!-- Palm & Lower fingers -->
+                                <path d="M300 100 L230 105 L190 135 L210 175 L270 185 L305 155 Z"
+                                    fill="url(#whiteCeramicGrad)" stroke="#94a3b8" stroke-width="2" />
+                                <!-- Folded fingers (Middle, Ring, Pinky) -->
+                                <path d="M230 140 C205 150 180 165 195 185 C210 200 235 180 245 165" fill="none"
+                                    stroke="url(#whiteCeramicGrad)" stroke-width="22" stroke-linecap="round" />
+                                <circle cx="220" cy="165" r="4" fill="#a855f7" />
+                                <path d="M240 155 C220 168 200 185 215 205 C230 220 255 195 260 180" fill="none"
+                                    stroke="url(#whiteCeramicGrad)" stroke-width="18" stroke-linecap="round" />
+                                <!-- Extended Index Finger reaching left towards center -->
+                                <g class="robotic-index-group">
+                                    <path d="M230 110 L150 112 L145 132 L230 132 Z" fill="url(#whiteCeramicGrad)"
+                                        stroke="#64748b" stroke-width="1.5" />
+                                    <circle cx="148" cy="122" r="7" fill="#1e293b" stroke="#a855f7"
+                                        stroke-width="1.5" filter="url(#purpleGlow)" />
+                                    <path d="M145 113 L75 116 L72 131 L145 131 Z" fill="url(#whiteCeramicGrad)"
+                                        stroke="#64748b" stroke-width="1.5" />
+                                    <circle cx="74" cy="123.5" r="6" fill="#1e293b" stroke="#a855f7"
+                                        stroke-width="1.5" filter="url(#purpleGlow)" />
+                                    <path d="M72 116 C45 117 20 120 5 124 C20 128 45 130 72 130 Z"
+                                        fill="url(#whiteCeramicGrad)" stroke="#a855f7" stroke-width="1.5" />
+                                    <!-- Glowing tip LED -->
+                                    <circle cx="6" cy="124" r="5" fill="#c084fc"
+                                        filter="url(#purpleGlow)" />
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Hero Footer & Scroll Status Bar -->
+            <div class="hero-footer-bar">
+
+
+                <div class="scroll-down-indicator" id="scrollPrompt"
+                    onclick="window.scrollBy({top: 450, behavior: 'smooth'})" title="Scroll down">
+                    <div class="chevron-arrow">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: VIAN / Medisync Fanned Ecosystem Design (Exact Match of Bottom Screenshot) -->
+    <section class="fanned-ecosystem-section" id="fanned-ecosystem-section">
+        <canvas id="fannedWaveCanvas" class="fanned-wave-bg"></canvas>
+        <div class="ecosystem-container">
+
+            <!-- Part 1: About Tag & Highlighted Philosophy Paragraph -->
+            <div class="ecosystem-about-header">
+                <span class="ecosystem-tag">✦ ABOUT VIAN CONSULTANCY</span>
+                <p class="ecosystem-main-statement">
+                    VIAN Consultancy Services combines technology and domain expertise for intelligent digital
+                    transformation you trust. We built <span class="cyan-highlight">a custom software & KPO platform that
+                        protects your data</span> while delivering enterprise-grade AI automation. Every solution is backed
+                    by engineering excellence and <span class="cyan-highlight">every architecture is designed for your
+                        unique business operations.</span>
+                </p>
+            </div>
+
+            <!-- Part 2: Horizontal Divider with Center Cyan Circle Icon (`--- (✦) ---`) -->
+            <div class="ecosystem-divider">
+                <div class="divider-line left-line"></div>
+
+                <div class="divider-line right-line"></div>
+            </div>
+
+            <!-- Part 3: What's Inside & Main Title -->
+            <div class="ecosystem-inside-header">
+                <span class="ecosystem-tag">✦ WHAT'S INSIDE VIAN CONSULTANCY</span>
+                <h2 class="ecosystem-title">Built to scale and optimize<br>your digital business</h2>
+            </div>
+
+            <!-- Part 4: Fanned-Out 4 Glassmorphic Cards Deck (`Habit tracker`, `Risk prediction`, etc. style) -->
+            <div class="fanned-cards-deck">
+                @forelse ($services as $index => $service)
+                    @php
+                        $classes = [
+                            'card-tilt-left-far',
+                            'card-tilt-left-inner',
+                            'card-tilt-right-inner',
+                            'card-tilt-right-far',
+                        ];
+
+                        $cardClass = $classes[$index % 4];
+                    @endphp
+                    <!-- Card 1: Far Left (-14deg tilt) -->
+                    <div class="fanned-card {{ $cardClass }}">
+                        <a href="{{ route('services') }}" class="vian-nav-item">
+                            <div class="fanned-card-img">
+                                <img src="{{ asset('storage/' . $service->image) }}" alt="Custom Software Development">
+                            </div>
+                            <div class="fanned-card-bottom-pill">
+                                <span class="pill-label">{{ $service->title }}</span>
+                            </div>
+                        </a>
+                    </div>
+                @empty
+                    <<div class="fanned-card card-tilt-left-far">No Services
+            </div>
+            @endforelse
+        </div>
+
+        <!-- Part 5: Bottom Action Button (Exact Twin of Header Button) -->
+        <div class="ecosystem-action-row">
+            <a href="{{ route('services') }}" class="custom-solutions-pill-btn bottom-hero-btn">
+                <span class="arrow-circle-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </span>
+                <span class="pill-btn-text">Start Your Transformation</span>
             </a>
-
-            <div class="hero-visual">
-                <div class="arc-glow"></div>
-                <p class="partner-text">Trusted by businesses worldwide to innovate, scale, and succeed.</p>
-                <div class="partners-grid">
-                    <div class="partner-row">
-                        @foreach ($clients->take(4) as $client)
-                            <div class="partner-item">
-                                <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}" width="150"
-                                    height="150" loading="lazy">
-                            </div>
-                        @endforeach
-                    </div>
-
-                    <div class="partner-row" style="">
-                        @foreach ($clients->skip(4) as $client)
-                            <div class="partner-item">
-                                <img src="{{ asset('storage/' . $client->logo) }}" alt="{{ $client->name }}" width="150"
-                                    height="150" loading="lazy">
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="services">
-        <div class="container">
-            <h2>Our services</h2>
-            <div class="service-accordion">
-                @foreach ($services as $key => $service)
-                    <!-- Web Design (Expanded) -->
-                    <div class="accordion-item {{ $key == 0 ? 'active' : '' }}">
-                        <div class="accordion-header">
-                            <h3>{{ $service->title }}</h3>
-                            <span class="plus">{{ $key == 0 ? '-' : '>' }}</span>
-                        </div>
-                        <div class="accordion-content">
-                            <div class="service-details">
-                                <div class="service-icon">
-                                    <img src={{ asset('storage/' . $service->icon) }} width="60" height="60" loading="lazy">
-                                </div>
-                                <div class="service-info">
-                                    <p>{{ $service->description }}</p>
-
-                                </div>
-                                <div class="service-action">
-                                    <a href="{{ route('services') }}" class="btn-choose">CHOOSE SERVICE <i
-                                            class="fa-solid fa-arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-                <!-- Web Development -->
-
-            </div>
         </div>
-    </section>
 
-    <!-- Team/Genies Section -->
-    <section class="genies">
-        <div class="container">
-            <h2>
-                We are a team of designers and<br>
-                developers — <span class="italic-cyan serif">not genies</span>, but we<br>
-                <span class="cyan-text">make wishes come true!</span>
+    </section>
+    <!-- SECTION 7: Dreamy Lavender Cloud AI Agent Banner Section (Exact Match of Screenshot) -->
+    <section class="dreamy-cloud-section" id="dreamy-cloud-section">
+
+        <!-- Layered Animated Cloud Atmosphere & Floating Background Mist/Sparkles -->
+        <div class="cloud-atmosphere" aria-hidden="true">
+            <!-- Drifting Foreground Mist & Puff 1 -->
+            <div class="drifting-cloud drift-1"></div>
+            <!-- Drifting Foreground Mist & Puff 2 -->
+            <div class="drifting-cloud drift-2"></div>
+            <!-- Drifting Foreground Mist & Puff 3 -->
+            <div class="drifting-cloud drift-3"></div>
+            <!-- Drifting Foreground Mist & Puff 4 -->
+            <div class="drifting-cloud drift-4"></div>
+            <!-- Floating Ethereal Sparkles across the cloud sky -->
+            <span class="cloud-sparkle sparkle-1">✦</span>
+            <span class="cloud-sparkle sparkle-2">✦</span>
+            <span class="cloud-sparkle sparkle-3">✦</span>
+        </div>
+
+        <div class="cloud-content-container">
+
+
+
+            <!-- Editorial Serif Main Title (`Create browser agents for repetitive tasks`) -->
+            <h2 class="cloud-main-heading">
+                Create browser agents<br>for repetitive tasks
             </h2>
+
+            <!-- Subtitle Paragraph -->
+            <p class="cloud-subtext">
+                Automate your repetitive browser tasks and SOPs with fast, reliable browser agents.<br>
+                Describe your workflow, and Cognition builds an AI agent to automate it seamlessly.
+            </p>
+
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="hiw-header">
-                <div class="hiw-header-left">
-                    <span class="hiw-label">// Why Us</span>
-                    <h2>The Difference We Deliver Most software companies start with
-                        technology. <span class="cyan-text">We start with your business.</span></h2>
+    <section class="our-works-showcase-section" id="our-works">
+        <div class="works-showcase-container">
 
-                </div>
-                <div class="hiw-header-right">
-                    <a href="{{ route('about') }}" class="btn-cyan-pill">Read More<i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
+            <div class="works-carousel-wrapper">
+                <!-- Carousel Track (3 Cards Side-by-Side on Desktop) -->
+                <div class="works-carousel-track" id="worksCarouselTrack">
+                    <!-- Slide 1 -->
+                    @forelse ($portfolios as $portfolio)
+                        <div class="works-slide-card">
+                            <div class="slide-badge">✦ {{ $portfolio->title }}</div>
+                            <h4 class="slide-title">{{ $portfolio->title }}</h4>
+                            <p class="slide-desc">
+                                {{ \Illuminate\Support\Str::limit(strip_tags($portfolio->description), 120) }}</p>
+                            <div class="slide-meta">
+                                <a href="{{ route('portfolio') }}"
+                                    class="custom-solutions-pill-btn slide-card-read-more-btn">
+                                    <span class="arrow-circle-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                                            <polyline points="12 5 19 12 12 19"></polyline>
+                                        </svg>
+                                    </span>
+                                    <span class="pill-btn-text">Read more</span>
+                                </a>
+                            </div>
 
-            <div class="process-container">
-                <!-- Step 01 -->
-                <div class="process-card">
-                    <div class="step-num">01</div>
-                    <div class="step-inner">
-                        <div class="step-icon"><i class="fa-solid fa-comment-dots"></i></div>
-                        <h3>
-                            Business-First Thinking</h3>
-                        <p>We understand business, operations, and people—not just code. Many of us have built
-                            products and companies ourselves, so we think like founders and operators, not just
-                            developers.</p>
-                    </div>
-                </div>
-
-                <!-- Step 02 -->
-                <div class="process-card featured">
-                    <div class="step-num">02</div>
-                    <div class="step-inner">
-                        <div class="step-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Built for Real Users</h3>
-                        <p>We design every system with the end user in mind. We spend time understanding how people
-                            actually use systems, what slows them down, and what frustrates them. Simple flows,
-                            clean screens, and practical features ensure fast adoption and high productivity.</p>
-                        <a href="{{ route('portfolio') }}" class="step-link">Start Your Project <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Step 03 -->
-                <div class="process-card">
-                    <div class="step-num">03</div>
-                    <div class="step-inner">
-                        <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
-                        <h3>
-                            Affordable Cost</h3>
-                        <p>Great systems don’t have to come with extreme price tags. Our pricing is driven by value,
-                            not by complexity. By combining smart design, and efficient development practices, we
-                            keep costs practical without compromising quality.</p>
-                    </div>
-                </div>
-
-                <!-- Visual Connection (Dots & Waves) -->
-                <div class="process-dots">
-                    <span class="p-dot dot-1"></span>
-                    <span class="p-dot dot-2"></span>
-                    <span class="p-dot dot-3"></span>
-                    <span class="p-dot dot-4"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted Platform Section -->
-    <section class="trusted-platform">
-        <div class="container">
-            <div class="tp-grid">
-                <div class="tp-left">
-                    <div class="tp-image-container">
-                        <img src="{{ asset('storage/' . $contents['about']->image) }}" alt="Trusted Platform Diagram"
-                            class="tp-image" loading="lazy">
-                    </div>
-                </div>
-                <div class="hiw-header">
-                    <div class="hiw-header-left">
-                        <span class="hiw-label">// About Us</span>
-                        <h2>{!! $contents['about']->title !!}<span class="cyan-text"></span></h2>
-                        <p>{!! $contents['about']->description !!}</p>
-
-                        <div class="tp-actions">
-                            <a href="{{ route('about') }}" class="btn-cyan-pill">Read More <i
-                                    class="fa-solid fa-arrow-right"></i></a>
 
                         </div>
-                    </div>
+                    @empty
+                    @endforelse
+                </div>
 
+
+
+
+                <!-- Indicator Dots & Navigation Arrows -->
+                <div class="carousel-stage-controls">
+                    <button class="carousel-circle-btn prev-btn" id="worksPrevBtn" aria-label="Previous Slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots-row" id="worksCarouselDots">
+                        <span class="carousel-dot active" data-index="0"></span>
+                        <span class="carousel-dot" data-index="1"></span>
+                        <span class="carousel-dot" data-index="2"></span>
+                        <span class="carousel-dot" data-index="3"></span>
+                    </div>
+                    <button class="carousel-circle-btn next-btn" id="worksNextBtn" aria-label="Next Slide">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SECTION 6: Creative Infographic Slide (Exact Match of Screenshot) -->
+    <section class="creative-infographic-section" id="creative-infographic">
+        <!-- Decorative vertical line on the far left edge (`same design`) -->
+        <div class="infographic-side-track">
+            <span class="track-dot top-dot"></span>
+            <span class="track-line"></span>
+            <span class="track-dot bottom-dot"></span>
+        </div>
+
+        <div class="infographic-container">
+
+            <!-- Column 1: Left Text Block -->
+            <div class="infographic-left-col">
+                <h2 class="infographic-main-title">We are a team of designers & developers — not genies</h2>
+                <span class="infographic-subtitle"> But we
+                    make wishes come true!</span>
+                <p class="infographic-desc">
+                    The Difference We Deliver Most software companies start with technology. We start with your business.
+                </p>
+            </div>
+
+            <!-- Column 2: Center Orbiting Circle Infographic Hub -->
+            <div class="infographic-center-col">
+                <div class="infographic-orbit-system">
+                    <!-- Outer Orbiting Ring with dots and squares -->
+                    <div class="orbit-ring-outer">
+                        <span class="orbit-dot dot-top"></span>
+                        <span class="orbit-dot dot-right"></span>
+                        <span class="orbit-square square-bottom-left"></span>
+                        <span class="orbit-dot dot-gray-left"></span>
+                    </div>
+                    <!-- Inner Orbiting Arc with small dots -->
+                    <div class="orbit-ring-inner">
+                        <span class="orbit-dot dot-inner-top"></span>
+                        <span class="orbit-dot dot-inner-bottom"></span>
+                    </div>
+                    <!-- Solid Central Black/Dark Hub Circle (`64% / Your text here`) -->
+                    <div class="infographic-core-circle">
+                        {{-- <span class="core-number" id="infographicCounter"> --}}
+                        <img src="{{ asset('assets/frontend/img/home.webp') }}" alt="Loading" class="loading-gif"
+                            width="300" height="300">
+                        {{-- </span> --}}
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Column 3: Right Stacked Circular Icon Items (Exact Match of Screenshot) -->
+            <div class="infographic-right-col">
+
+                <!-- Item 1: Database / Stack Icon (`Creative Title Text`) -->
+                <div class="infographic-row-item">
+                    <div class="row-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 3.79 2 6v12c0 2.21 4.48 4 10 4s10-1.79 10-4V6c0-2.21-4.48-4-10-4zm0 2c4.41 0 8 1.34 8 2s-3.59 2-8 2-8-1.34-8-2 3.59-2 8-2zm0 6c4.41 0 8 1.34 8 2s-3.59 2-8 2-8-1.34-8-2 3.59-2 8-2zm0 6c4.41 0 8 1.34 8 2s-3.59 2-8 2-8-1.34-8-2 3.59-2 8-2z" />
+                        </svg>
+                    </div>
+                    <div class="row-text-content">
+                        <h4 class="row-item-title">Business-First Thinking</h4>
+                        <p class="row-item-desc">Some transactions may be subject to tax that may be added to the list
+                            price handling</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Sun / Brightness Icon (`Creative Title Text`) -->
+                <div class="yu infographic-row-item">
+                    <div class="row-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                    </div>
+                    <div class="row-text-content">
+                        <h4 class="row-item-title">Built for Real Users</h4>
+                        <p class="row-item-desc">Some transactions may be subject to tax that may be added to the list
+                            price handling</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Plane / Rocket Icon (`Creative Title Text`) -->
+                <div class="infographic-row-item">
+                    <div class="row-icon-circle">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" />
+                        </svg>
+                    </div>
+                    <div class="row-text-content">
+                        <h4 class="row-item-title">Affordable Cost</h4>
+                        <p class="row-item-desc">Some transactions may be subject to tax that may be added to the list
+                            price handling</p>
+                    </div>
                 </div>
 
             </div>
-
-
-        </div>
     </section>
+    <!-- SECTION 8: FAQ Section (Exact Design) -->
+    <section class="faq-section" id="faq-section">
+        {{-- 
+        <div class="faq-container">
+            <h2 class="faq-main-title">FAQ's</h2>
 
-    <!-- Team, Stats & Portfolio Section -->
-    <section class="team-portfolio">
-        <div class="container">
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                @forelse ($faqs as $faq)
+                    <div class="faq-item">
+                        <div class="faq-header">
+                            <span class="faq-toggle-icon">+</span>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
+                        </div>
+                        <div class="faq-body">
+                            <p class="faq-answer">{{ $faq->answer }}</p>
+                        </div>
+                    @empty
+                @endforelse
 
-            <!-- Team Photo Banner -->
-            {{-- <div class="team-banner">
-                <img src="{{ asset('storage/' . $contents['our_team']->image) }}" alt="Our Team"
-                    class="team-banner-img">
-                <div class="team-banner-overlay"></div>
+            </div>
             </div> --}}
+        <div class="faq-container">
+            <h2 class="faq-main-title">FAQ's</h2>
 
-
-
-            <!-- Portfolio Heading -->
-            <section class="genies">
-                <div class="container">
-                    <h2>
-                        Our Works
-                    </h2>
-                </div>
-            </section>
-
-
-            <!-- Portfolio Carousel -->
-            <div class="portfolio-carousel-wrap">
-                <div class="portfolio-carousel" id="portfolioCarousel">
-                    <div class="portfolio-slide">
-                        @foreach ($portfolios as $key => $portfolio)
-                            <div class="portfolio-card {{ $key == 2 ? 'active' : 'side' }}">
-                                                        <a href="{{route('portfolio')}}">
-
-                                <img src="{{ asset('storage/' . $portfolio->image) }}" alt="{{ $portfolio->title }}"
-                                    class="portfolio-card-img" loading="lazy">
-                                <div class="portfolio-card-overlay"></div>
-                                <span class="portfolio-card-label">{{ $portfolio->title }}</span>
-                                                        </a>
-
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <!-- Carousel Nav -->
-                <div class="portfolio-nav">
-                    <button class="portfolio-btn" id="portfolioPrev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="portfolio-info">
-                        <p class="portfolio-info-title cyan-text" id="portfolioTitle">Agency ERP</p>
-                        <p class="portfolio-info-desc" id="portfolioDesc">Comprehensive management software for
-                            modern creative and digital agencies.</p>
-                    </div>
-                    <button class="portfolio-btn" id="portfolioNext"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-
-                <!-- View More -->
-                <div class="portfolio-more">
-                    <a href="{{ route('portfolio') }}" class="btn-cyan-pill">View more</a>
-                </div>
-            </div>
-
-            <!-- Featured Project Showcase -->
-            <div class="portfolio-showcase">
-                {{-- <div class="showcase-content">
-                    <div class="showcase-text">
-                        <h2 style="font-size: 40px;">Find a better card deal <br><span class="cyan-text">in few easy
-                                steps.</span></h2>
-                        <p>Arcu tortor, purus in mattis at sed integer faucibus. Aliquet quis aliquet eget mauris
-                            tortor. Aliquet ultrices ac, ametau.</p>
-                        <a href="{{ route('contact') }}" class="btn-get-started">Get Started</a>
-                    </div>
-                    <div class="showcase-visual">
-                        <div class="visual-rings">
-                            <div class="ring ring-1"></div>
-                            <div class="ring ring-2"></div>
-                            <div class="ring ring-3"></div>
+            <div class="faq-accordion">
+                <!-- FAQ Item 1 -->
+                @forelse ($faqs as $index=>$faq)
+                    <div class="faq-item {{ $index == 1 ? 'active' : '' }}">
+                        <div class="faq-header ">
+                            <span class="faq-toggle-icon">+</span>
+                            <h3 class="faq-question-text">{{ $faq->question }}</h3>
                         </div>
-
-                        <!-- Floating Card 1: Scan -->
-                        <div class="floating-card card-scan">
-                            <div class="card-icon"><i class="fa-solid fa-qrcode"></i></div>
-                            <h4>Scan Credit Cards</h4>
-                            <p>Scan your credit card in 4 minutes.</p>
-                        </div>
-
-                        <!-- Floating Card 2: Analysis -->
-                        <div class="floating-card card-analysis">
-                            <div class="card-header">
-                                <h4>Online Analysis</h4>
-                                <span class="time-range">1 Month <i class="fa-solid fa-chevron-down"></i></span>
-                            </div>
-                            <div class="analysis-stats">
-                                <div class="stat">
-                                    <span class="stat-value">$ 2,334.67</span>
-                                    <span class="stat-label">Income</span>
-                                </div>
-                                <div class="stat">
-                                    <span class="stat-value">$ 5.31M</span>
-                                    <span class="stat-label">Expenses</span>
-                                </div>
-                            </div>
-                            <div class="analysis-graph">
-                                <svg viewBox="0 0 200 60">
-                                    <path d="M0,40 Q25,20 50,45 T100,30 T150,50 T200,35" fill="none" stroke="#00f2ff"
-                                        stroke-width="2" />
-                                </svg>
-                            </div>
-                            <div class="graph-labels">
-                                <span>Jan</span><span>Feb</span><span
-                                    class="active">Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span>
-                            </div>
-                        </div>
-
-                        <!-- Floating Card 3: Pay Method -->
-                        <div class="floating-card card-pay">
-                            <div class="card-header">
-                                <h4>Pay Method</h4>
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </div>
-                            <div class="pay-icons">
-                                <div class="pay-icon"><i class="fa-brands fa-paypal"></i></div>
-                                <div class="pay-icon"><i class="fa-brands fa-apple"></i></div>
-                                <div class="pay-icon"><i class="fa-brands fa-cc-visa"></i></div>
-                                <div class="pay-icon"><i class="fa-brands fa-shopify"></i></div>
-                            </div>
+                        <div class="faq-body">
+                            <p class="faq-answer">{{ $faq->answer }}</p>
                         </div>
                     </div>
-                </div> --}}
+                @empty
+                @endforelse
+
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="testimonials-header">
-                <h2>Client <span class="cyan-text">Feedback</span></h2>
-                <p>Everything you need to accept card payments and grow your business anywhere on the planet.</p>
+    <!-- SECTION 9: Bottom Statement Heading Section (`add this headiig bottom`) -->
+    <section class="bottom-cta-heading-section" id="bottom-statement">
+        <div class="statement-header-area">
+            <!-- Layered Animated Cloud Atmosphere & Floating Background Mist/Sparkles -->
+            <div class="cloud-atmosphere" aria-hidden="true">
+                <!-- Drifting Foreground Mist & Puff 1 -->
+                <div class="drifting-cloud drift-1"></div>
+                <!-- Drifting Foreground Mist & Puff 2 -->
+                <div class="drifting-cloud drift-2"></div>
+                <!-- Drifting Foreground Mist & Puff 3 -->
+                <div class="drifting-cloud drift-3"></div>
+                <!-- Drifting Foreground Mist & Puff 4 -->
+                <div class="drifting-cloud drift-4"></div>
+                <!-- Floating Ethereal Sparkles across the cloud sky -->
+                <span class="cloud-sparkle sparkle-1">✦</span>
+                <span class="cloud-sparkle sparkle-2">✦</span>
+                <span class="cloud-sparkle sparkle-3">✦</span>
             </div>
-            <div class="testimonials-carousel-wrap">
-                <div class="testimonials-container">
-                    <div class="testimonials-slider" id="testimonialSlider">
-                        <!-- Testimonial 1 -->
-                        @foreach ($testimonials as $testimonial)
-                            <div class="testimonial-card">
-                                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                <p class="quote-text">{{ $testimonial->message }}</p>
-                                <div class="testimonial-author">
-                                    <img src="{{ asset('storage/' . $testimonial->image) }}" alt="Herman Jensen" loading="lazy">
-                                    <div class="author-info">
-                                        <h4>{{ $testimonial->name }}</h4>
-                                        <p>
-                                            @if ($testimonial->designation)
-                                                {{ $testimonial->designation }},
-                                            @endif
-                                            {{ $testimonial->company }}
-                                        </p>
-                                    </div>
-                                </div>
+
+            <div class="cta-heading-container">
+                <div class="statement-grid-container">
+                    <!-- Row 1: Let's (Left only) -->
+                    <div class="statement-grid-cell blue-text">Let’s</div>
+                    <div class="statement-grid-cell"></div>
+
+                    <!-- Row 2: create -> experiences -->
+                    <div class="statement-grid-cell blue-text">create <span class="arrow-symbol">→</span></div>
+                    <div class="statement-grid-cell dark-text">Experiences</div>
+
+                    <!-- Row 3: that ace it with (Right only) -->
+                    <div class="statement-grid-cell"></div>
+                    <div class="statement-grid-cell dark-text">that ace it with</div>
+
+                    <!-- Row 4: your fans. (Right only) -->
+                    <div class="statement-grid-cell"></div>
+                    <div class="statement-grid-cell dark-text">your fans.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-heading-container">
+            <!-- Contact Form Card Under Heading (`remove vetical lines bg from contact-form-card`) -->
+            <div class="contact-form-wrapper-cta">
+                <!-- Background animation removed -->
+                @if ($errors->any())
+                    <div class="error-text">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <form class="contact-form-card" id="contactForm" action="{{ route('contact.store') }}" method="POST">
+                    @csrf
+
+                    <div class="contact-form-col">
+
+                        <div class="contact-form-grid">
+                            <div class="contact-form-group">
+                                <input type="text" name="name" id="fullName" class="contact-input"
+                                    placeholder=" " required value="{{ old('name') }}" />
+                                <label for="fullName" class="contact-label">Full Name</label>
                             </div>
-                        @endforeach
-
-                    </div>
-                </div>
-
-                <!-- Carousel Controls -->
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" id="testimonialPrev"><i
-                            class="fa-solid fa-arrow-left"></i></button>
-                    <div class="carousel-dots" id="testimonialDots"></div>
-                    <button class="carousel-btn next" id="testimonialNext"><i
-                            class="fa-solid fa-arrow-right"></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="faq-header">
-                <span class="hiw-label">// KPO</span>
-                <h2>Knowledge Process Outsourcing</h2>
-                <p>Our KPO services are built for businesses that rely on data, analysis, research, and domain
-                    expertise to make critical decisions. We don’t just provide people—we design processes, systems,
-                    and performance models that make knowledge work reliable and scalable.</p>
-                <p>Our goal is to become a trusted extension of your team—handling knowledge work so you can focus
-                    on strategy, growth, and innovation!</p>
-            </div>
-            <div class="faq-accordion-grid">
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>
-                            Understanding Your Knowledge Needs</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We study what kind of knowledge work you need—research, analysis, documentation,
-                                reporting, or decision support—and how it fits into your business.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>Designing Smart Workflows</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We structure workflows that make knowledge work clear, repeatable, and measurable,
-                                without killing flexibility.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>Building Skilled Teams</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We recruit and train teams with the right mix of domain knowledge, analytical skills,
-                                and process discipline.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>Standardizing for Quality</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We define standards, checks, and controls to ensure consistent, high-quality output.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>Technology Enablement</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We use tools and platforms for collaboration, tracking, quality control, and
-                                reporting.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <div class="accordion-header">
-                        <h3>
-                            Continuous Improvement</h3>
-                        <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                    </div>
-                    <div class="accordion-content">
-                        <div class="faq-answer-box">
-                            <p>We regularly review performance, improve processes, and scale operations as your
-                                needs grow</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-left">
-                    <h2>Always
-                        <br><span class="cyan-text">Here to</span>
-                        <br>Help
-                    </h2>
-                    <p>Our team is ready to assist
-                        whenever you need us</p>
-
-                </div>
-                <div class="contact-right">
-                    <form class="contact-form" id="contactForm">
-
-                        @csrf
-
-                        <div class="form-row">
-
-                            <input type="text" name="name" placeholder="Name" required>
-
-                            <input type="email" name="email" placeholder="Email" required>
-
+                            <div class="contact-form-group">
+                                <input type="email" name="email" id="emailAddress" class="contact-input"
+                                    placeholder=" " required value="{{ old('email') }}" />
+                                <label for="emailAddress" class="contact-label">Email Address</label>
+                            </div>
                         </div>
 
-                        <div class="form-row">
-
-                            <input type="text" name="phone" placeholder="Phone Number" class="full-width">
-
+                        <div class="contact-form-group">
+                            <input type="text" name="phone" id="messageSubject" class="contact-input"
+                                placeholder=" " required value={{ old('phone') }}>
+                            <label for="messageSubject" class="contact-label">Phone</label>
                         </div>
 
-                        <div class="form-row">
-
-                            <textarea name="message" placeholder="Message" required class="full-width"></textarea>
-
+                        <div class="contact-form-group textarea-group">
+                            <textarea name="message" id="messageText" class="contact-input contact-textarea" rows="2" placeholder=" "
+                                required>{{ old('message') }}</textarea>
+                            <label for="messageText" class="contact-label">Message</label>
                         </div>
                         <div class="form-row">
-                        <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
+                            <div class="g-recaptcha" data-sitekey="{{ config('services.recaptcha.site_key') }}">
+                            </div>
                         </div>
-                        </div>
-                        <div class="form-submit">
 
-                            <button type="submit" class="btn-send">
-
-                                Send Message
-
+                        <!-- Submit button exactly styled like header button (`change submit button same as header button`) -->
+                        <div class="contact-form-actions">
+                            <button type="submit" class="custom-solutions-pill-btn contact-submit-pill-btn">
+                                <span class="arrow-circle-btn">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </span>
+                                <span class="pill-btn-text">Send Message</span>
                             </button>
-
                         </div>
-
-                        {{-- RESPONSE --}}
-                        <div id="contactResponse" class="mt-3"></div>
-
-                    </form>
-
-                </div>
+                </form>
             </div>
         </div>
     </section>
 
+    <!-- SECTION 9.5: Bottom Client & Partners Carousel (`add client carouse in bottom`) -->
+    <section class="client-showcase-section" id="client-showcase">
+        <div class="client-showcase-container">
+
+
+            <!-- Infinite Marquee Ticker of Top Industry Brand Image Logos -->
+            <div class="client-marquee-wrapper">
+                <div class="client-marquee-track">
+                    <!-- Group 1 -->
+                    @forelse ($clients as $client)
+                        <div class="client-logo-card">
+                            <img src="{{ asset('storage/' . $client->logo) }}" class="client-logo-img">
+                        </div>
+                    @empty
+                    @endforelse
+                </div>
+            </div>
+
+
+        </div>
+    </section>
 @endsection
-@push('scripts')
-    <script>
-        const projects = @json($portfolioData);
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+@push('script')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        $(document).ready(function() {
-
-            $('#contactForm').submit(function(e) {
-                e.preventDefault();
-
-                let form = $(this);
-
-                let submitBtn = form.find('button[type="submit"]');
-
-                submitBtn.prop('disabled', true).text('Sending...');
-
-                $.ajax({
-
-                    url: "{{ route('contact.store') }}",
-                    type: "POST",
-                    data: form.serialize(),
-
-                    success: function(response) {
-
-                        $('#contactResponse').html(`
-                    <div class="alert alert-success">
-                        ${response.message}
-                    </div>
-                `);
-
-                        form.trigger('reset');
-                        grecaptcha.reset();
-
-                    },
-
-                    error: function(xhr) {
-
-                        let errors = xhr.responseJSON.errors;
-
-                        let errorHtml = '<div class="alert alert-danger"><ul>';
-
-                        $.each(errors, function(key, value) {
-
-                            errorHtml += `<li>${value[0]}</li>`;
-
-                        });
-
-                        errorHtml += '</ul></div>';
-
-                        $('#contactResponse').html(errorHtml);
-
-                    },
-
-                    complete: function() {
-
-                        submitBtn.prop('disabled', false).text('Send Message');
-
-                    }
-
-                });
-
-            });
-
-        });
-    </script>
 @endpush

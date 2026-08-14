@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\ContactController;
+use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\PageContentController;
 use App\Http\Controllers\Backend\PortfolioController;
@@ -18,6 +19,9 @@ Route::get('/services', [WebsiteController::class, 'service'])->name('services')
 Route::get('/portfolio', [WebsiteController::class, 'portfolio'])->name('portfolio');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('contact');
 Route::post('/contact/store', [WebsiteController::class, 'storeContact'])->name('contact.store');
+// Route::get('/', function () {
+    // return view('frontend.layouts.app');
+// });
 
 //Admin Routes
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -32,7 +36,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
         Route::get('/settings', [SettingController::class, 'edit'])->name('settings.edit');
         Route::put('/settings', [SettingController::class, 'update'])->name('settings.update');
-        Route::resource('page-content', PageContentController::class);
+        Route::resource('pagecontent', PageContentController::class);
 
         Route::resource('services', ServiceController::class);
         Route::post('services/{service}/toggle-status', [ServiceController::class, 'toggleStatus'])->name('services.toggle-status');
@@ -45,6 +49,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
         Route::resource('clients', ClientController::class);
         Route::post('clients/{client}/toggle-status', [ClientController::class, 'toggleStatus'])->name('clients.toggleStatus');
+
+        Route::resource('faqs', FaqController::class);
 
         Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
         Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');

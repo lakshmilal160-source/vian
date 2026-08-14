@@ -27,12 +27,12 @@
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Inc2 -Dashboard| Custom Software Developement</title>
+    <title>Vian -Dashboard| Custom Software Developement</title>
 
     <meta name="description" content="" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('storage/'.$globalSetting->favicon) }}" />
+    <link rel="icon" type="image/x-icon" href="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -77,13 +77,13 @@
               <div class="app-brand justify-content-center">
                 <a href="index.html" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
-                    <img src="{{ asset('storage/'.$globalSetting->favicon) }}" width="50">
+                    <img src="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}" width="50">
                   </span>
-                  <span class="app-brand-text demo text-body fw-bolder">INC2</span>
+                  <span class="app-brand-text demo text-body fw-bolder">vian</span>
                 </a>
               </div>
               <!-- /Logo -->
-              <h4 class="mb-2">Welcome to INC2! 👋</h4>
+              <h4 class="mb-2">Welcome to vian 👋</h4>
               <p class="mb-4">Please sign-in to your account and start the adventure</p>
 
               <form id="formAuthentication" class="mb-3" action="{{ route('admin.login.post') }}" method="POST">

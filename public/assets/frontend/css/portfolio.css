@@ -1,0 +1,602 @@
+/* ==========================================================================
+   VIAN — PORTFOLIO PAGE STYLES (`portfolio.css`)
+   Exact 50/50 Editorial Split Layout matching user's reference design (`input_file_0.png`)
+   ========================================================================== */
+
+/* ── Shared Variables & Body Configuration ── */
+:root, [data-theme="dark"] {
+    --bg-page: var(--bg-main);
+    --text-main: var(--text-primary);
+    --text-muted: var(--text-secondary);
+    --split-img-bg: rgba(0, 0, 0, 0.2);
+    --split-text-bg: rgba(17, 8, 43, 0.4);
+    --card-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.portfolio-main-wrapper {
+    position: relative;
+    padding-top: 80px; /* Space for fixed navbar */
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ── Portfolio Body Section Container ── */
+.portfolio-body-section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.portfolio-split-wrapper {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5rem;
+}
+
+/* ── Individual 50/50 Split Row (`Order To Cash`, `Procure To Pay`, etc.) ── */
+.portfolio-split-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+    min-height: 380px;
+    background: transparent;
+    border-radius: 4px; /* Crisp editorial edge */
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+/* ── Left / Right Half Panels (50% Width Each with exactly 50px padding on each side) ── */
+.split-img-side {
+    flex: 1 1 50%;
+    min-width: 320px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px !important;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.split-text-side {
+    flex: 1 1 50%;
+    min-width: 320px;
+    background-color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px !important;
+    text-align: left !important;
+    box-sizing: border-box;
+}
+
+/* ── Framed Image Box inside Image Side (Fills exact 50px boundary without big left/right spaces) ── */
+.split-img-frame {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 310px !important;
+    margin: 0 !important;
+    border-radius: 0px !important; /* Sharp square corners exactly like gallery print */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    
+    /* Moving Border Animation Setup */
+    padding: 3px !important; /* This creates the border thickness */
+    background: rgba(0, 0, 0, 0.05); /* Fallback */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The spinning animated gradient background */
+.split-img-frame::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent, transparent, transparent, #8b5cf6, #3b82f6, #8b5cf6);
+    animation: splitImgBorderSpin 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes splitImgBorderSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.split-img-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    position: relative;
+    z-index: 1; /* Keep above the spinning gradient */
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.portfolio-split-row:hover .split-img-frame {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.14);
+}
+
+[data-theme="dark"] .portfolio-split-row:hover .split-img-frame {
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+}
+
+.portfolio-split-row:hover .split-img-frame img {
+    transform: scale(1.04);
+}
+
+/* ── Content Box inside Text Side (Left Aligned inside 50px padding) ── */
+.split-content-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start !important;
+    justify-content: center;
+    text-align: left !important;
+}
+
+.split-title {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, Georgia, serif !important;
+    font-size: 25px;
+    font-weight: 500!important;
+    text-transform: capitalize;
+    letter-spacing: -0.02em;
+    color: var(--text-main);
+    text-align: left !important;
+    margin-top: 0;
+    margin-bottom: 1.15rem;
+    line-height: 1.25;
+}
+
+.split-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.95rem, 1.08vw, 1.02rem);
+    color: #475569;
+    line-height: 1.95;
+    text-align: left !important;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* ── Bottom Signature (`Company Name` script/calligraphy style in reference image) ── */
+.split-signature {
+    font-family: Georgia, 'Times New Roman', Baskerville, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.45rem;
+    letter-spacing: 0.04em;
+    color: var(--text-main);
+    opacity: 0.88;
+    text-align: left !important;
+}
+
+/* ── Responsive Breakpoints (Tablet & Mobile Stack Layout) ── */
+@media (max-width: 1024px) {
+    .split-img-side {
+        padding: 40px !important;
+    }
+
+    .split-text-side {
+        padding: 40px !important;
+    }
+
+    .split-img-frame {
+        height: 260px !important;
+    }
+
+    .split-title {
+        font-size: 1.65rem;
+        letter-spacing: -0.02em;
+        margin-bottom: 1rem;
+        text-align: left !important;
+    }
+
+    .split-desc {
+        margin-bottom: 1.25rem;
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-split-wrapper {
+        gap: 3.5rem;
+        padding: 0 1rem;
+    }
+
+    .portfolio-split-row {
+        flex-direction: column !important;
+        min-height: unset;
+    }
+
+    .split-img-side {
+        padding: 30px !important;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .split-text-side {
+        padding: 30px !important;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .split-img-frame {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 240px !important;
+    }
+
+    .split-content-box {
+        align-items: flex-start !important;
+        text-align: left !important;
+    }
+
+    .split-title {
+        font-size: 1.45rem;
+        letter-spacing: -0.02em;
+        text-align: left !important;
+    }
+
+    .split-desc {
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 1.25rem;
+        text-align: left !important;
+    }
+
+    .split-signature {
+        font-size: 1.3rem;
+        text-align: left !important;
+    }
+}
+
+/* ==========================================================================
+   PORTFOLIO PAGINATION (Modern Glassmorphic & Pill UI)
+   ========================================================================== */
+.portfolio-pagination-container {
+    width: 100%;
+    max-width: 1280px;
+    /* margin: 5rem auto 1rem auto; */
+    padding: 0 1.5rem 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.portfolio-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 0.85rem 1.75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .portfolio-pagination {
+    background: rgba(15, 23, 42, 0.75);
+    border-color: rgba(51, 65, 85, 0.8);
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.45);
+}
+
+.page-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: var(--bg-card);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    padding: 0.6rem 1.35rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] .page-nav-btn {
+    border-color: rgba(71, 85, 105, 0.8);
+}
+
+.page-nav-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.25s ease;
+}
+
+.page-nav-btn:hover:not(.disabled) {
+    background: #1e293b;
+    color: #ffffff;
+    border-color: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(30, 41, 59, 0.22);
+}
+
+[data-theme="dark"] .page-nav-btn:hover:not(.disabled) {
+    background: #38bdf8;
+    color: #0f172a;
+    border-color: #38bdf8;
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.3);
+}
+
+.page-nav-btn.page-prev:hover:not(.disabled) svg {
+    transform: translateX(-3px);
+}
+
+.page-nav-btn.page-next:hover:not(.disabled) svg {
+    transform: translateX(3px);
+}
+
+.page-nav-btn.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.page-numbers-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.page-num-btn {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: var(--text-main);
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.page-num-btn:hover:not(.active) {
+    background: rgba(203, 213, 225, 0.45);
+    color: var(--text-main);
+}
+
+[data-theme="dark"] .page-num-btn:hover:not(.active) {
+    background: rgba(51, 65, 85, 0.65);
+}
+
+.page-num-btn.active {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: #ffffff;
+    border-color: #1e293b;
+    box-shadow: 0 6px 16px rgba(30, 41, 59, 0.28);
+    transform: scale(1.06);
+}
+
+[data-theme="dark"] .page-num-btn.active {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    color: #0f172a;
+    border-color: #38bdf8;
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.38);
+}
+
+.page-ellipsis {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0 0.25rem;
+    user-select: none;
+}
+
+@media (max-width: 640px) {
+    .portfolio-pagination {
+        gap: 0.65rem;
+        padding: 0.65rem 1rem;
+    }
+    .page-nav-btn span {
+        display: none;
+    }
+    .page-nav-btn {
+        padding: 0.6rem 0.85rem;
+    }
+    .page-num-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==========================================================================
+   PERFECT COLOR COMBINATION OVERRIDES
+   ========================================================================== */
+.portfolio-body-section {
+    background: #0a0022 !important;
+}
+.split-title {
+    background: linear-gradient(90deg, #000000 0%, #35177b 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    text-shadow: none !important;
+}
+.split-desc {
+    color: #475569 !important;
+}
+[data-theme="dark"] .portfolio-body-section { 
+    background: var(--bg-section-ecosystem) !important; 
+}
+[data-theme="dark"] .split-title {
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    color: #f8fafc !important;
+    text-shadow: 0 4px 25px rgba(192, 132, 252, 0.35) !important;
+}
+[data-theme="dark"] .split-desc {
+    color: #cbd5e1 !important;
+}
+
+/* Pagination Visibility Fix */
+.page-nav-btn,
+.page-num-btn,
+.page-ellipsis {
+    color: #35177b !important;
+}
+.page-num-btn.active {
+    background: linear-gradient(135deg, #35177b 0%, #1e293b 100%) !important;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .page-nav-btn,
+[data-theme="dark"] .page-num-btn,
+[data-theme="dark"] .page-ellipsis {
+    color: #e2e8f0 !important;
+}
+[data-theme="dark"] .page-num-btn.active {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%) !important;
+    color: #0f172a !important;
+}
+
+/* Global Responsive Adjustments for Tab & Mobile (Equal 60px padding) */
+@media screen and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+    html, body {
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    .contact-hero,
+    .portfolio-hero,
+    .services-hero,
+    .section-padding,
+    main > section {
+        padding: 60px 10px !important;
+        box-sizing: border-box !important;
+    }
+}
+
+/* Tablet view (769px - 1024px) padding update */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    section,
+    .hero-stage-container,
+    .fanned-ecosystem-section,
+    .dreamy-cloud-section,
+    .our-works-showcase-section,
+    .creative-infographic-section,
+    .faq-section,
+    .bottom-cta-heading-section,
+    .client-showcase-section,
+    .about-hero,
+    main > section {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+}
+
+/* ==========================================================================
+   iPhone Pro Max (430x932) Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 430px) {
+    .portfolio-grid,
+    .masonry-grid {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .portfolio-item,
+    .portfolio-card {
+        width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+    }
+    .portfolio-item img,
+    .portfolio-card img {
+        width: 100% !important;
+        height: auto !important;
+    }
+    .filters,
+    .portfolio-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+
+
+/* Alternate Backgrounds */
+.portfolio-split-row:nth-child(even) {
+    background-color: var(--bg-section-cloud, #111522);
+}
+.portfolio-split-row:nth-child(even) .split-title {
+    color: var(--text-primary, #f8fafc) !important;
+}
+.portfolio-split-row:nth-child(even) .split-desc {
+    color: #556570 !important;
+}
+.portfolio-split-row:nth-child(even) .split-signature {
+    color: var(--text-primary, #f8fafc) !important;
+}
+

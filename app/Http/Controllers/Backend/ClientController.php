@@ -61,7 +61,7 @@ class ClientController extends Controller
 
             'name' => 'required|string|max:255',
             'website' => 'nullable|url',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg',
             'status' => 'required|boolean',
 
         ]);
@@ -112,7 +112,7 @@ class ClientController extends Controller
 
             'name' => 'required|string|max:255',
             'website' => 'nullable|url',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp',
+            'logo' => 'nullable|image|mimes:jpg,jpeg,png,webp,svg',
             'status' => 'required|boolean',
 
         ]);

@@ -40,7 +40,7 @@
                         </div>
                     @endif
 
-                    <form action="{{ route('admin.page-content.update', $content->id) }}"
+                    <form action="{{ route('admin.pagecontent.update', $content->id) }}"
                           method="POST"
                           enctype="multipart/form-data">
 
@@ -170,7 +170,7 @@
                                 Update Content
                             </button>
 
-                            <a href="{{ route('admin.page-content.index') }}"
+                            <a href="{{ route('admin.pagecontent.index') }}"
                                class="btn btn-outline-secondary">
                                 Cancel
                             </a>

@@ -1,5 +1,5 @@
 <?php
 return [
-    'app_name' => 'INC2',
+    'app_name' => 'Vian',
     'contents' => ['about', 'description', 'welcome_note', 'mission', 'vission', 'values' , 'our_team','banner'],
 ];

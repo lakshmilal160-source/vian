@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Providers;
-
+use App\Models\Setting;
+use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $setting = Setting::first();
+        $services = Service::all();
+        View::share([
+            'globalSetting' => $setting,
+            'globalService' => $services           
+        ]);
     }
 }

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40">
+  <!-- Microsoft 4-color window icon -->
+  <rect x="8" y="8" width="11" height="11" fill="#f35325"/>
+  <rect x="21" y="8" width="11" height="11" fill="#81bc06"/>
+  <rect x="8" y="21" width="11" height="11" fill="#05a6f0"/>
+  <rect x="21" y="21" width="11" height="11" fill="#ffba08"/>
+  <!-- Microsoft Text -->
+  <text x="40" y="26" font-family="'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-size="18" font-weight="600" fill="#334155" letter-spacing="-0.3">Microsoft</text>
+</svg>

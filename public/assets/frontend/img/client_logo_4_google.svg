@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40">
+  <!-- Google Cloud 4-color hexagon/cloud icon -->
+  <path d="M28.5 16.2 L24.3 8.9 C23.8 8.1 22.9 7.6 22 7.6 L13.6 7.6 C12.7 7.6 11.8 8.1 11.3 8.9 L7.1 16.2 C6.6 17 6.6 18 7.1 18.8 L11.3 26.1 C11.8 26.9 12.7 27.4 13.6 27.4 L22 27.4 C22.9 27.4 23.8 26.9 24.3 26.1 L28.5 18.8 C29 18 29 17 28.5 16.2 Z" fill="none" stroke="#4285f4" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M13.6 7.6 L22 7.6 L26.2 14.9 L17.8 14.9 Z" fill="#ea4335"/>
+  <path d="M7.1 16.2 L11.3 8.9 L15.5 16.2 L11.3 23.5 Z" fill="#fbbc05"/>
+  <path d="M13.6 27.4 L22 27.4 L26.2 20.1 L17.8 20.1 Z" fill="#34a853"/>
+  <!-- Google Cloud Text -->
+  <text x="36" y="25" font-family="'Product Sans', Roboto, sans-serif" font-size="17" font-weight="600" fill="#334155" letter-spacing="-0.2">Google Cloud</text>
+</svg>
