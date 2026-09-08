@@ -70,8 +70,8 @@
         <div class="footer-contact-item">
             <i class="fa-solid fa-phone"></i>
 
-            <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="link-item">
-                +{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}
+            <a href="tel:{{ $ $globalSetting->countryCode1->phonecode??"" }} {{ $globalSetting->phone_1??"" }}" class="link-item">
+                +{{  $globalSetting->countryCode1->phonecode??"" }} {{ $globalSetting->phone_1??"" }}
             </a>
         </div>
 
@@ -87,7 +87,7 @@
 
 .footer-contact-item {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 12px;
     margin-bottom: 18px;
 }

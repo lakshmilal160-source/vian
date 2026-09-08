@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $setting = Setting::first();
+        $setting = Setting::first()->with('countryCode1');
         $services = Service::all();
         View::share([
             'globalSetting' => $setting,

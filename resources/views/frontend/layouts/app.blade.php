@@ -8,7 +8,11 @@
     <meta name="description"
         content="Custom Software Solutions at an Affordable Cost. Watch human domain expertise and AI engineering unite to deliver enterprise software cleanly and affordably.">
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ optional('globalSetting')->favicon?asset('storage/'.$globalSetting->favicon):asset('assets/admin/img/favicon/favicon.ico') }}">
+    @if(!empty($globalSetting) && !empty($globalSetting->favicon))
+    <link rel="icon" type="image/png" href="{{ asset('storage/' . $globalSetting->favicon) }}">
+    @else
+    <link rel="icon" type="image/png" href="{{ asset('assets/admin/img/favicon/favicon.png') }}">
+    @endif
 
 
     <!-- Google Fonts: Outfit & Inter for ultra-modern typography -->
@@ -63,7 +67,7 @@
 
     <!-- Scripts -->
     {{-- <script src="script.js"> --}}
-    <script src="{{ asset('assets/frontend/js/script.js') }}"></script>
+    <script src="{{ asset('assets/frontend/js/script.js') }}" ></script>
     {{-- </script> --}}
     @stack('script')
 </body>

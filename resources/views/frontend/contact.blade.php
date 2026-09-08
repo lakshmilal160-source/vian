@@ -101,7 +101,7 @@
                 <!-- Call Us -->
                 <div class="cinfo-block">
                     <h3 class="cinfo-title">Call Us</h3>
-                    <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="cinfo-action-link cinfo-link-orange">
+                    <a href="tel:{{ $globalSetting->countryCode1->phonecode??"" }} {{ $globalSetting->phone_1??"" }}" class="cinfo-action-link cinfo-link-orange">
                         <span class="cinfo-icon-circle cinfo-icon-orange">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                                 stroke-linecap="round" stroke-linejoin="round">
@@ -109,7 +109,7 @@
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.89 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.8 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 5.55 5.55l1.28-1.34a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
                         </span>
-                        <span>+ {{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}</span>
+                        <span>+ {{ $globalSetting->countryCode1->phonecode??"" }} {{ $globalSetting->phone_1??"" }}</span>
                     </a>
                 </div>
 
@@ -157,11 +157,7 @@
                          ========================================================================== -->
     <section class="contact-map-section" id="mapSection">
         <div class="contact-map-wrapper">
-            <iframe class="contact-map-iframe"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3570200527893!2d-122.41941558468175!3d37.77492997975906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4233%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1623000000000!5m2!1sen!2sus"
-                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                title="VIAN Consultancy Services Location - San Francisco, CA">
-            </iframe>
+            <iframe class="contact-map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.436600865533!2d80.25380009999999!3d1z3.007845600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5266346e8218af%3A0xa02ab8cb57536863!2sThe%20S%20Studio!5e0!3m2!1sen!2sin!4v1787892473207!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
     </section>
 @endsection

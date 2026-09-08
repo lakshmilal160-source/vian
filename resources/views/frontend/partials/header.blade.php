@@ -28,15 +28,15 @@
 
             <!-- Right Action Pill (`[ -> ] Call Now`) + Mobile Menu Button -->
             <div class="nav-actions right-vian-action">
-                <a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="custom-solutions-pill-btn">
-                    <span class="arrow-circle-btn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
-                    </span>
-                    <span class="pill-btn-text">Call Now</span>
-                </a>
+                <!--<a href="tel:{{ $globalSetting->phone_1_country_code_id??"" }} {{ $globalSetting->phone_1??"" }}" class="custom-solutions-pill-btn">-->
+                <!--    <span class="arrow-circle-btn">-->
+                <!--        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">-->
+                <!--            <line x1="5" y1="12" x2="19" y2="12"></line>-->
+                <!--            <polyline points="12 5 19 12 12 19"></polyline>-->
+                <!--        </svg>-->
+                <!--    </span>-->
+                <!--    <span class="pill-btn-text">Call Now</span>-->
+                <!--</a>-->
 
                 <!-- Sleek Button-Type Mobile Menu Toggle Button (`i want button type mobile menu`) -->
                 <button class="mobile-menu-toggle-btn" id="mobileMenuBtn" aria-label="Open Mobile Menu" title="Menu">
